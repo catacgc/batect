@@ -834,7 +834,7 @@ tests. This example is for a Java project that uses Gradle, and assumes that you
 <li>We also mount <code>.gradle-cache</code> into the container as <code>/root/.gradle</code> - this allows Gradle to cache
    dependencies between builds, rather than downloading them on every single run. (You probably want to
    add this directory to your <code>.gitignore</code>.)</li>
-<li>We use <code>:cached</code> mode for the mounts to improve performance on OS X (see
+<li>We use <code>:cached</code> mode for the mounts to improve performance on macOS (see
    <a href="tips/Performance.html#io-performance">this page</a> for more information). This has no effect on other operating systems.</li>
 <li>We disable the <a href="https://docs.gradle.org/current/userguide/gradle_daemon.html">Gradle daemon</a>, as running
    it is pointless given that we create a new container for every run.</li>

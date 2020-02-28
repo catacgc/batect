@@ -595,6 +595,26 @@
     I/O performance
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cache-volumes" class="md-nav__link">
+    Cache volumes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mounts-in-cached-mode" class="md-nav__link">
+    Mounts in cached mode
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -736,6 +756,26 @@
     I/O performance
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cache-volumes" class="md-nav__link">
+    Cache volumes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mounts-in-cached-mode" class="md-nav__link">
+    Mounts in cached mode
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -775,24 +815,63 @@
 <h2 id="io-performance">I/O performance<a class="headerlink" href="#io-performance" title="Permanent link">&para;</a></h2>
 <div class="admonition tip">
 <p class="admonition-title">tl;dr</p>
-<p>If you're seeing slow build times under batect on OS X, volume mount options such as <code>cached</code> might help</p>
+<p>If you're seeing slow build times under batect on macOS or Windows, using batect's caches as well as volume mount options such as <code>cached</code> might help</p>
 </div>
+<p>Docker requires features only found in the Linux kernel, and so on macOS and Windows, Docker Desktop runs a lightweight Linux virtual machine
+to host Docker. However, while this works perfectly fine for most situations, there is some overhead involved in operations
+that need to work across the host / virtual machine boundary, particularly when it comes to mounting files or directories into a container from the host.</p>
+<p>While the throughput of mounts on macOS and Windows is generally comparable to native file access within a container, the latency
+performing I/O operations such as opening a file handle can often be significant, as these need to cross from the Linux VM hosting Docker to the
+host OS and back again.</p>
+<p>This increased latency quickly accumulates, especially when many file operations are involved. This particularly affects languages such as JavaScript
+and Golang that encourage distributing all dependencies as source code and breaking codebases into many small files, as even a warm build with no source
+code changes still requires the compiler to examine each dependency file to ensure that the cached build result is up-to-date.</p>
+<p>There are two ways to improve the performance of file I/O when using batect:</p>
+<ul>
+<li>Use <a href="#cache-volumes">a batect cache backed by a Docker volume</a> wherever possible</li>
+<li>Otherwise, use <a href="#mounts-in-cached-mode">the <code>cached</code> mount mode</a></li>
+</ul>
+<h3 id="cache-volumes">Cache volumes<a class="headerlink" href="#cache-volumes" title="Permanent link">&para;</a></h3>
+<p>The performance penalty of mounting a file or directory from the host machine does not apply to <a href="https://docs.docker.com/storage/volumes/">Docker volumes</a>,
+as these remain entirely on the Linux VM hosting Docker. This makes them perfect for directories such as caches where persistence between task runs is required,
+but easy access to their contents is not necessary.</p>
+<p>batect makes this simple to configure. In your container definition, add a mount to <a href="../config/Containers.html#volumes"><code>volumes</code></a> with <code>type: cache</code>.</p>
+<p>For example, for a typical Node.js application, to cache the <code>node_modules</code> directory in a volume, include the following in your configuration:</p>
+<div class="codehilite"><pre><span></span><span class="nt">containers</span><span class="p">:</span>
+  <span class="nt">build-env</span><span class="p">:</span>
+    <span class="nt">image</span><span class="p">:</span> <span class="s">&quot;node:13.8.0&quot;</span>
+    <span class="nt">volumes</span><span class="p">:</span>
+      <span class="p p-Indicator">-</span> <span class="nt">local</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">.</span>
+        <span class="nt">container</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">/code</span>
+      <span class="p p-Indicator">-</span> <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">cache</span>
+        <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">app-node-modules</span>
+        <span class="nt">container</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">/code/node_modules</span>
+    <span class="nt">working_directory</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">/code</span>
+</pre></div>
+
+<p>If you are using cache volumes with <a href="BuildArtifactsOwnedByRoot.html">run as current user mode</a> enabled, you must use a Dockerfile built by batect for the container and add
+the following to that Dockerfile to ensure that the container can read and write to caches:</p>
+<div class="codehilite"><pre><span></span><span class="k">ARG</span> batect_cache_setup_command
+<span class="k">RUN</span> sh -c <span class="s2">&quot;</span><span class="nv">$batect_cache_setup_command</span><span class="s2">&quot;</span>
+</pre></div>
+
+<p>batect uses the <code>batect_cache_setup_command</code> build arg to create the target directories of any caches and ensure that they have the correct permissions set. This must be done
+at image build time due to limitations in Docker's support for using volumes with different users.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>To make it easier to share caches between builds on ephemeral CI agents, you can use directories mounted from the project's <code>.batect/caches</code> directory
+instead of volumes and then archive this directory between builds. Run batect with <code>--cache-type=directory</code> to enable this behaviour.</p>
+<p>Using mounted directories instead of volumes has no performance impact on Linux.</p>
+</div>
+<h3 id="mounts-in-cached-mode">Mounts in <code>cached</code> mode<a class="headerlink" href="#mounts-in-cached-mode" title="Permanent link">&para;</a></h3>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
-<p>This section only applies to OS X-based hosts, and is only supported by Docker version 17.04 and higher.</p>
+<p>This section only applies to macOS-based hosts, and is only supported by Docker version 17.04 and higher.
+Enabling <code>cached</code> mode is harmless for other host operating systems.</p>
 </div>
-<p>Docker requires features only found in the Linux kernel, and so on OS X, Docker for Mac runs a lightweight virtual machine
-to host Docker. However, while this works perfectly fine for most situations, there is some overhead involved in operations
-that need to work across the host / virtual machine boundary.</p>
-<p>Usually this overhead is so small that it's not noticeable, but for operations involving mounted volumes, this overhead can
-be significant. In particular, this can impact compilation operations involving reading and writing many files.</p>
-<p>There is a way to reduce this overhead significantly: use the
-<a href="https://docs.docker.com/docker-for-mac/osxfs-caching/">volume mount options introduced in Docker 17.04</a>.</p>
-<p>In particular, for the typical scenario where you are editing code files on your host's disk and mounting that into a container
-for compilation, using the <code>cached</code> volume mount mode can result in a significant performance improvement - we saw an improvement
-in compilation times of ~60% on one Golang project once we started using this.</p>
-<p>(Before you use these options in another context, you should consult the
-<a href="https://docs.docker.com/docker-for-mac/osxfs-caching/">documentation</a> to understand the implications of the option.)</p>
+<p>For situations where a cache is not appropriate (eg. mounting your code from the host into a build environment), specifying the <code>cached</code> volume mount option
+can result in significant performance improvements.</p>
+<p>(Before you use this option in another context, you should consult the <a href="https://docs.docker.com/docker-for-mac/osxfs-caching/">documentation</a> to understand the implications of it.)</p>
 <p>For example, instead of defining your container like this:</p>
 <div class="codehilite"><pre><span></span><span class="nt">containers</span><span class="p">:</span>
   <span class="nt">build-env</span><span class="p">:</span>
@@ -815,7 +894,7 @@ in compilation times of ~60% on one Golang project once we started using this.</
 </pre></div>
 
 <p>Setting this option will not affect Linux or Windows hosts, so it's safe to commit and share this in a project where some developers use
-OS X and others use Linux or Windows.</p>
+macOS and others use Linux or Windows.</p>
 <h2 id="database-schema-and-test-data">Database schema and test data<a class="headerlink" href="#database-schema-and-test-data" title="Permanent link">&para;</a></h2>
 <div class="admonition tip">
 <p class="admonition-title">tl;dr</p>

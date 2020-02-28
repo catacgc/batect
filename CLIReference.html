@@ -493,6 +493,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#customise-cache-storage-mechanism-cache-type" class="md-nav__link">
+    Customise cache storage mechanism (--cache-type)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#customise-docker-connection-options" class="md-nav__link">
     Customise Docker connection options
   </a>
@@ -965,6 +972,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#customise-cache-storage-mechanism-cache-type" class="md-nav__link">
+    Customise cache storage mechanism (--cache-type)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#customise-docker-connection-options" class="md-nav__link">
     Customise Docker connection options
   </a>
@@ -1149,6 +1163,18 @@ system, which can be useful when diagnosing issues with batect.</p>
 Use this option to instruct batect to use a different file.</p>
 <p>Example:</p>
 <div class="codehilite"><pre><span></span>./batect --config-file my-other-config-file.yml the-task
+</pre></div>
+
+<h3 id="customise-cache-storage-mechanism-cache-type">Customise cache storage mechanism <small>(<code>--cache-type</code>)</small><a class="headerlink" href="#customise-cache-storage-mechanism-cache-type" title="Permanent link">&para;</a></h3>
+<p>By default, batect will use a Docker volume for each <a href="tips/Performance.html#cache-volumes">cache mount</a>.
+Use this option to instruct batect to use a different storage mechanism.</p>
+<p>Supported values are:</p>
+<ul>
+<li><code>volume</code>: use Docker volumes</li>
+<li><code>directory</code>: use directories mounted from the project's <code>.batect/caches</code> directory</li>
+</ul>
+<p>Example:</p>
+<div class="codehilite"><pre><span></span>./batect --cache-type<span class="o">=</span>directory the-task
 </pre></div>
 
 <h3 id="customise-docker-connection-options">Customise Docker connection options<a class="headerlink" href="#customise-docker-connection-options" title="Permanent link">&para;</a></h3>
