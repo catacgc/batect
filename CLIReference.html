@@ -457,6 +457,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#cleanup-all-caches-for-this-project-clean" class="md-nav__link">
+    Cleanup all caches for this project (--clean)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#upgrade-batect-upgrade" class="md-nav__link">
     Upgrade batect (--upgrade)
   </a>
@@ -621,6 +628,18 @@
 
 
   <li class="md-nav__item">
+    <a href="tools/DotNetCore.html" title=".NET Core" class="md-nav__link">
+      .NET Core
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="tools/CircleCI.html" title="CircleCI" class="md-nav__link">
       CircleCI
     </a>
@@ -669,8 +688,8 @@
 
 
   <li class="md-nav__item">
-    <a href="tools/Java.html" title="Java" class="md-nav__link">
-      Java
+    <a href="tools/Gradle.html" title="Gradle" class="md-nav__link">
+      Gradle
     </a>
   </li>
 
@@ -936,6 +955,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#cleanup-all-caches-for-this-project-clean" class="md-nav__link">
+    Cleanup all caches for this project (--clean)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#upgrade-batect-upgrade" class="md-nav__link">
     Upgrade batect (--upgrade)
   </a>
@@ -1149,6 +1175,9 @@ Utility tasks:
 - shell: Start a shell in the development environment.
 </pre></div>
 
+<h2 id="cleanup-all-caches-for-this-project-clean">Cleanup all caches for this project <small>(<code>--clean</code>)</small><a class="headerlink" href="#cleanup-all-caches-for-this-project-clean" title="Permanent link">&para;</a></h2>
+<p>Running <code>./batect --clean</code> will remove all caches created for this project.</p>
+<p>This command respects the value of the <a href="#customise-cache-storage-mechanism-cache-type"><code>--cache-type</code></a> option and the <code>BATECT_CACHE_TYPE</code> environment variable.</p>
 <h2 id="upgrade-batect-upgrade">Upgrade batect <small>(<code>--upgrade</code>)</small><a class="headerlink" href="#upgrade-batect-upgrade" title="Permanent link">&para;</a></h2>
 <p>Running <code>./batect --upgrade</code> will automatically upgrade batect in the current project to the latest
 available version.</p>
@@ -1173,6 +1202,8 @@ Use this option to instruct batect to use a different storage mechanism.</p>
 <li><code>volume</code>: use Docker volumes</li>
 <li><code>directory</code>: use directories mounted from the project's <code>.batect/caches</code> directory</li>
 </ul>
+<p>The <code>BATECT_CACHE_TYPE</code> environment variable can also be used to set the default cache type. If both the environment
+variable and the <code>--cache-type</code> option are set, the value given with <code>--cache-type</code> takes precedence.</p>
 <p>Example:</p>
 <div class="codehilite"><pre><span></span>./batect --cache-type<span class="o">=</span>directory the-task
 </pre></div>

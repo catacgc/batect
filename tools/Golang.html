@@ -420,6 +420,18 @@
 
 
   <li class="md-nav__item">
+    <a href="DotNetCore.html" title=".NET Core" class="md-nav__link">
+      .NET Core
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="CircleCI.html" title="CircleCI" class="md-nav__link">
       CircleCI
     </a>
@@ -483,9 +495,36 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#example-configuration" class="md-nav__link">
+    Example configuration
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#caching-dependencies" class="md-nav__link">
     Caching dependencies
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gopath" class="md-nav__link">
+    GOPATH
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gocache" class="md-nav__link">
+    GOCACHE
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -506,8 +545,8 @@
 
 
   <li class="md-nav__item">
-    <a href="Java.html" title="Java" class="md-nav__link">
-      Java
+    <a href="Gradle.html" title="Gradle" class="md-nav__link">
+      Gradle
     </a>
   </li>
 
@@ -718,9 +757,36 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#example-configuration" class="md-nav__link">
+    Example configuration
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#caching-dependencies" class="md-nav__link">
     Caching dependencies
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gopath" class="md-nav__link">
+    GOPATH
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gocache" class="md-nav__link">
+    GOCACHE
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -745,18 +811,43 @@
                 
                 <h1 id="golang">Golang<a class="headerlink" href="#golang" title="Permanent link">&para;</a></h1>
 <p>You can see a full example of using batect with Golang in <a href="https://github.com/batect/batect-sample-golang">the Golang sample project</a>.</p>
+<h2 id="example-configuration">Example configuration<a class="headerlink" href="#example-configuration" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><span class="nt">containers</span><span class="p">:</span>
+  <span class="nt">build-env</span><span class="p">:</span>
+    <span class="nt">image</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">golang:1.14.0-stretch</span>
+    <span class="nt">volumes</span><span class="p">:</span>
+      <span class="p p-Indicator">-</span> <span class="nt">local</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">.</span>
+        <span class="nt">container</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">/code</span>
+        <span class="nt">options</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">cached</span>
+      <span class="p p-Indicator">-</span> <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">cache</span>
+        <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">go-cache</span>
+        <span class="nt">container</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">/go</span>
+    <span class="nt">working_directory</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">/code</span>
+    <span class="nt">environment</span><span class="p">:</span>
+      <span class="c1"># With the image above, GOPATH defaults to /go, so we don&#39;t need to set it explicitly.</span>
+      <span class="nt">GOCACHE</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">/go/cache</span>
+</pre></div>
+
 <h2 id="caching-dependencies">Caching dependencies<a class="headerlink" href="#caching-dependencies" title="Permanent link">&para;</a></h2>
 <div class="admonition tip">
 <p class="admonition-title">tl;dr</p>
-<p>Mount a directory into your container for your <code>GOPATH</code>, otherwise you'll have to download and compile your dependencies every
+<p>Mount a cache into your container for your <code>GOPATH</code> and <code>GOCACHE</code>, otherwise you'll have to download and compile your dependencies every
 time the build runs</p>
 </div>
-<p>Golang caches the source and binaries for dependencies under your <a href="https://golang.org/doc/code.html#Workspaces"><code>GOPATH</code></a>. By default, this is at <code>$HOME/go</code>.
+<h3 id="gopath"><code>GOPATH</code><a class="headerlink" href="#gopath" title="Permanent link">&para;</a></h3>
+<p>Golang caches the source for dependencies under your <a href="https://github.com/golang/go/wiki/GOPATH"><code>GOPATH</code></a>. By default, this is at <code>$HOME/go</code>.
 However, because batect destroys all of your containers once the task finishes, this directory is lost at the end of every task run - which means that Golang
-will have to download and compile all of your dependencies again, significantly slowing down the build.</p>
-<p>The solution to this is to mount a directory that persists between builds into your container for your <code>GOPATH</code>.</p>
-<p>For example, the <a href="https://hub.docker.com/_/golang">official Golang Docker images</a> set <code>GOPATH</code> to <code>/go</code>, so mounting the directory <code>.go-cache</code> in your project
-to <code>/go</code> inside the container will allow your dependencies to be persisted across builds.</p>
+will have to download all of your dependencies again next time you run the task, significantly slowing down the build.</p>
+<p>The solution to this is to mount a <a href="../tips/Performance.html#cache-volumes">cache</a> that persists between builds into your container for your <code>GOPATH</code>.</p>
+<p>For example, the <a href="https://hub.docker.com/_/golang">official Golang Docker images</a> set <code>GOPATH</code> to <code>/go</code>, so mounting a cache at <code>/go</code> inside the container will
+allow your dependencies to be persisted across builds.</p>
+<h3 id="gocache"><code>GOCACHE</code><a class="headerlink" href="#gocache" title="Permanent link">&para;</a></h3>
+<p>The Golang compiler caches intermediate build output (such as built libraries) in <a href="https://golang.org/cmd/go/#hdr-Build_and_test_caching"><code>GOCACHE</code></a>.
+Just like for <code>GOPATH</code>, the contents of <code>GOCACHE</code> will be lost when the task finishes and the container is removed, which means that Golang will have to recompile
+all code for your project, even if it has not changed. This can also significantly slow down the build.</p>
+<p>Again, the solution is to mount a <a href="../tips/Performance.html#cache-volumes">cache</a> that persists between builds into your container for your <code>GOCACHE</code>.</p>
+<p>The <a href="https://hub.docker.com/_/golang">official Golang Docker images</a> do not set a default for <code>GOCACHE</code>, so you will need to set this yourself. In the example above, <code>GOCACHE</code> has been placed
+inside <code>/go</code> (which is the default <code>GOPATH</code>) so that both use the same cache.</p>
                 
                   
                 
@@ -793,13 +884,13 @@ to <code>/go</code> inside the container will allow your dependencies to be pers
           </a>
         
         
-          <a href="Java.html" title="Java" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="Gradle.html" title="Gradle" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Java
+                Gradle
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">

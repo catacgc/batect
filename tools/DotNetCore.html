@@ -13,7 +13,7 @@
         <meta name="description" content="Documentation for batect, the build and testing environments as code tool">
       
       
-        <link rel="canonical" href="https://batect.dev/tips/WaitingForDependenciesToBeReady.html">
+        <link rel="canonical" href="https://batect.dev/tools/DotNetCore.html">
       
       
         <meta name="author" content="Charles Korn">
@@ -42,7 +42,7 @@
     
     
       
-        <title>Waiting for dependencies to be ready - batect documentation</title>
+        <title>.NET Core - batect documentation</title>
       
     
     
@@ -118,7 +118,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#waiting-for-dependencies-to-be-ready" tabindex="1" class="md-skip">
+      <a href="#net-core" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -144,7 +144,7 @@
             </span>
             <span class="md-header-nav__topic">
               
-                Waiting for dependencies to be ready
+                .NET Core
               
             </span>
           
@@ -397,10 +397,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8" checked>
     
     <label class="md-nav__link" for="nav-8">
       Language and tool-specific information
@@ -416,11 +418,63 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../tools/DotNetCore.html" title=".NET Core" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        .NET Core
+      </label>
+    
+    <a href="DotNetCore.html" title=".NET Core" class="md-nav__link md-nav__link--active">
       .NET Core
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#example-configuration" class="md-nav__link">
+    Example configuration
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#caching-dependencies" class="md-nav__link">
+    Caching dependencies
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#caching-build-output" class="md-nav__link">
+    Caching build output
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -430,7 +484,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../tools/CircleCI.html" title="CircleCI" class="md-nav__link">
+    <a href="CircleCI.html" title="CircleCI" class="md-nav__link">
       CircleCI
     </a>
   </li>
@@ -442,7 +496,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../tools/Docker.html" title="Docker" class="md-nav__link">
+    <a href="Docker.html" title="Docker" class="md-nav__link">
       Docker
     </a>
   </li>
@@ -454,7 +508,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../tools/GitHubActions.html" title="GitHub Actions" class="md-nav__link">
+    <a href="GitHubActions.html" title="GitHub Actions" class="md-nav__link">
       GitHub Actions
     </a>
   </li>
@@ -466,7 +520,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../tools/Golang.html" title="Golang" class="md-nav__link">
+    <a href="Golang.html" title="Golang" class="md-nav__link">
       Golang
     </a>
   </li>
@@ -478,7 +532,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../tools/Gradle.html" title="Gradle" class="md-nav__link">
+    <a href="Gradle.html" title="Gradle" class="md-nav__link">
       Gradle
     </a>
   </li>
@@ -490,7 +544,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../tools/Node.html" title="Node.js" class="md-nav__link">
+    <a href="Node.html" title="Node.js" class="md-nav__link">
       Node.js
     </a>
   </li>
@@ -502,7 +556,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../tools/Ruby.html" title="Ruby" class="md-nav__link">
+    <a href="Ruby.html" title="Ruby" class="md-nav__link">
       Ruby
     </a>
   </li>
@@ -514,7 +568,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../tools/TravisCI.html" title="Travis CI" class="md-nav__link">
+    <a href="TravisCI.html" title="Travis CI" class="md-nav__link">
       Travis CI
     </a>
   </li>
@@ -529,12 +583,10 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9">
     
     <label class="md-nav__link" for="nav-9">
       Tips and tricks
@@ -552,7 +604,7 @@
 
 
   <li class="md-nav__item">
-    <a href="CISetup.html" title="CI setup" class="md-nav__link">
+    <a href="../tips/CISetup.html" title="CI setup" class="md-nav__link">
       CI setup
     </a>
   </li>
@@ -564,7 +616,7 @@
 
 
   <li class="md-nav__item">
-    <a href="IDEIntegration.html" title="IDE integration" class="md-nav__link">
+    <a href="../tips/IDEIntegration.html" title="IDE integration" class="md-nav__link">
       IDE integration
     </a>
   </li>
@@ -576,7 +628,7 @@
 
 
   <li class="md-nav__item">
-    <a href="Performance.html" title="Performance" class="md-nav__link">
+    <a href="../tips/Performance.html" title="Performance" class="md-nav__link">
       Performance
     </a>
   </li>
@@ -588,7 +640,7 @@
 
 
   <li class="md-nav__item">
-    <a href="BuildArtifactsOwnedByRoot.html" title="Build artifacts are owned by root" class="md-nav__link">
+    <a href="../tips/BuildArtifactsOwnedByRoot.html" title="Build artifacts are owned by root" class="md-nav__link">
       Build artifacts are owned by root
     </a>
   </li>
@@ -598,20 +650,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-    <a href="WaitingForDependenciesToBeReady.html" title="Waiting for dependencies to be ready" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../tips/WaitingForDependenciesToBeReady.html" title="Waiting for dependencies to be ready" class="md-nav__link">
       Waiting for dependencies to be ready
     </a>
-    
   </li>
 
         
@@ -621,7 +664,7 @@
 
 
   <li class="md-nav__item">
-    <a href="Proxies.html" title="Proxies" class="md-nav__link">
+    <a href="../tips/Proxies.html" title="Proxies" class="md-nav__link">
       Proxies
     </a>
   </li>
@@ -633,7 +676,7 @@
 
 
   <li class="md-nav__item">
-    <a href="Windows.html" title="Windows" class="md-nav__link">
+    <a href="../tips/Windows.html" title="Windows" class="md-nav__link">
       Windows
     </a>
   </li>
@@ -697,6 +740,36 @@
     
   
   
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#example-configuration" class="md-nav__link">
+    Example configuration
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#caching-dependencies" class="md-nav__link">
+    Caching dependencies
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#caching-build-output" class="md-nav__link">
+    Caching build output
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -707,27 +780,58 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/batect/batect/edit/master/docs/content/tips/WaitingForDependenciesToBeReady.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/batect/batect/edit/master/docs/content/tools/DotNetCore.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="waiting-for-dependencies-to-be-ready">Waiting for dependencies to be ready<a class="headerlink" href="#waiting-for-dependencies-to-be-ready" title="Permanent link">&para;</a></h1>
+                <h1 id="net-core">.NET Core<a class="headerlink" href="#net-core" title="Permanent link">&para;</a></h1>
+<h2 id="example-configuration">Example configuration<a class="headerlink" href="#example-configuration" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><span class="nt">containers</span><span class="p">:</span>
+  <span class="nt">build-env</span><span class="p">:</span>
+    <span class="nt">image</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">mcr.microsoft.com/dotnet/core/sdk:3.1.102</span>
+    <span class="nt">volumes</span><span class="p">:</span>
+      <span class="p p-Indicator">-</span> <span class="nt">local</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">.</span>
+        <span class="nt">container</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">/code</span>
+        <span class="nt">options</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">cached</span>
+      <span class="p p-Indicator">-</span> <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">cache</span>
+        <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">nuget-cache</span>
+        <span class="nt">container</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">/root/.nuget/packages</span>
+
+      <span class="c1"># Repeat this cache for each project in your codebase:</span>
+      <span class="p p-Indicator">-</span> <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">cache</span>
+        <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">project1-obj</span>
+        <span class="nt">container</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">/code/project1/obj</span>
+
+    <span class="nt">working_directory</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">/code</span>
+</pre></div>
+
+<h2 id="caching-dependencies">Caching dependencies<a class="headerlink" href="#caching-dependencies" title="Permanent link">&para;</a></h2>
 <div class="admonition tip">
 <p class="admonition-title">tl;dr</p>
-<p>Make sure your image has a health check defined, and batect will take care of the rest</p>
+<p>Mount a cache into your container for downloaded NuGet packages, otherwise you'll have to download and compile your dependencies every
+time the build runs</p>
 </div>
-<p>When running integration or end-to-end tests, you might need to start a number of external dependencies for your application, such as databases or
-fakes for external services.</p>
-<p>However, having these dependencies just running usually isn't sufficient - they also need to be ready to respond to requests. For example, your database of choice
-might take a few seconds to initialise and start accepting queries, and during this time, any requests to it will fail. So we'd like to avoid starting our tests
-before we know these things are ready, otherwise they'll fail unnecessarily.</p>
-<p>batect supports this exact requirement by taking advantage of <a href="https://docs.docker.com/engine/reference/builder/#healthcheck">Docker's health check feature</a>:</p>
+<p>By default, <code>dotnet</code> stores downloaded NuGet packages in <code>~/.nuget/packages</code>. However, because batect destroys all of your containers once the task finishes,
+this directory is lost at the end of every task run - which means that <code>dotnet</code> will have to download all of your dependencies again next time you run the task,
+significantly slowing down the build.</p>
+<p>The solution to this is to mount a <a href="../tips/Performance.html#cache-volumes">cache</a> that persists between builds into the container at <code>~/.nuget/packages</code>, so that these
+downloaded dependencies are persisted between builds.</p>
+<p>Note that you can't use <code>~</code> in the container path for a volume mount:</p>
 <ul>
-<li>If a container's image has a health check defined, batect won't start any containers that depend on it until the health check reports that it is healthy.</li>
-<li>If a container's image does not have a health check defined, it is treated as though it has a health check that immediately reported that it is healthy.</li>
-<li>If the health check fails to report that the container is healthy before the timeout period expires, batect won't start any other containers and will abort the task.</li>
+<li>If you're using <a href="../tips/BuildArtifactsOwnedByRoot.html">run as current user mode</a>, use the home directory you specified for <a href="../config/Containers.html#run_as_current_user"><code>home_directory</code></a>.</li>
+<li>If you're not using <a href="../tips/BuildArtifactsOwnedByRoot.html">run as current user mode</a>, use <code>/root</code> as the home directory, as the vast majority of containers
+  default to the root user and use this as the root user's home directory.</li>
 </ul>
-<p>There's <a href="https://github.com/docker-library/healthcheck/">a collection of sample health check scripts provided by Docker</a> you can use as inspiration, and the
-<a href="../SampleProjects.html">sample projects</a> use this technique extensively.</p>
+<h2 id="caching-build-output">Caching build output<a class="headerlink" href="#caching-build-output" title="Permanent link">&para;</a></h2>
+<div class="admonition tip">
+<p class="admonition-title">tl;dr</p>
+<p>Mount a cache into your container the <code>obj</code> directory for each project in your codebase, otherwise you'll experience poor performance on macOS and Windows,
+and issues with some IDEs.</p>
+</div>
+<p>The <code>obj</code> directory is used to store intermediate build output. However, when running on macOS and Windows,
+Docker exhibits poor I/O performance for directories mounted from the macOS or Windows host, as discussed in the section on <a href="../tips/Performance.html#io-performance">caches</a>.</p>
+<p>Furthermore, the <code>obj</code> directory contains files that include the absolute path to the NuGet packages in your project, which are only correct in the context of the container.
+This can cause issues for some IDEs (including Rider) that rely on these files to show code completion information for dependencies.</p>
+<p>The solution to this is to mount a <a href="../tips/Performance.html#cache-volumes">cache</a> that persists between builds into your container for each project's <code>obj</code> directory.</p>
                 
                   
                 
@@ -749,7 +853,7 @@ before we know these things are ready, otherwise they'll fail unnecessarily.</p>
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="BuildArtifactsOwnedByRoot.html" title="Build artifacts are owned by root" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../TaskLifecycle.html" title="Task lifecycle" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -758,19 +862,19 @@ before we know these things are ready, otherwise they'll fail unnecessarily.</p>
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Build artifacts are owned by root
+                Task lifecycle
               </span>
             </div>
           </a>
         
         
-          <a href="Proxies.html" title="Proxies" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="CircleCI.html" title="CircleCI" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Proxies
+                CircleCI
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
