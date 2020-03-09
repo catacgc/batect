@@ -712,9 +712,12 @@
 <p>When batect runs a task, there are a number of steps that it follows:</p>
 <p>First, it determines which tasks to run and what order to run them in, based on the prerequisites of the requested task and any prerequisites of those prerequisites and so on.</p>
 <p>Next, for each task, it determines what containers need to be started for that task, based on the dependency relationships between containers.</p>
-<p>Then, for every container that makes up the task:</p>
+<p>Then, it then creates a Docker network for the task, and runs <a href="tips/Performance.html">cache initialisation</a> if required.</p>
+<p>In parallel to setting up the network and caches, for every container that makes up the task:</p>
 <ol>
-<li>It builds or pulls the image required for that container</li>
+<li>It builds or pulls the image required for this container</li>
+<li>It waits for the task network to be ready</li>
+<li>It waits for cache initialisation to complete, if this container mounts any caches</li>
 <li>It waits for any containers that this container depends on to be ready - so each dependency must have reported as healthy and completed all setup commands</li>
 <li>It starts the container and the container's command</li>
 <li>It waits for the container to report as <a href="tips/WaitingForDependenciesToBeReady.html">healthy</a></li>
@@ -728,6 +731,7 @@
 <li>It removes this container</li>
 <li>It cleans up any temporary files or folders created for this container</li>
 </ol>
+<p>Once all containers are removed, the task network is removed and then the task is complete.</p>
                 
                   
                 

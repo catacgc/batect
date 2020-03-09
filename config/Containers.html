@@ -1414,14 +1414,6 @@ with users running on other operating systems, using Unix-style paths is recomme
 <li><code>container</code>: path to mount the cache directory at inside the container. Required.</li>
 <li><code>options</code>: standard Docker mount options (such as <code>ro</code> for read-only). Optional.</li>
 </ul>
-<p>If <a href="#run_as_current_user">run as current user mode</a> is enabled, you must use a Dockerfile built by batect for the container and add the following to that
-Dockerfile to ensure that the container can read and write to caches:</p>
-<div class="codehilite"><pre><span></span><span class="k">ARG</span> batect_cache_setup_command
-<span class="k">RUN</span> sh -c <span class="s2">&quot;</span><span class="nv">$batect_cache_setup_command</span><span class="s2">&quot;</span>
-</pre></div>
-
-<p>batect uses the <code>batect_cache_setup_command</code> build arg to create the target directories of any caches and ensure that they have the correct permissions set. This must be done
-at image build time due to limitations in Docker's support for using volumes with different users.</p>
 <h2 id="devices"><code>devices</code><a class="headerlink" href="#devices" title="Permanent link">&para;</a></h2>
 <p>List of device mounts to create for the container.</p>
 <p>Two formats are supported:</p>
