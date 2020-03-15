@@ -464,9 +464,38 @@
       
     
     
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        GitHub Actions
+      </label>
+    
     <a href="GitHubActions.html" title="GitHub Actions" class="md-nav__link md-nav__link--active">
       GitHub Actions
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#caching-between-builds" class="md-nav__link">
+    Caching between builds
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
     
   </li>
 
@@ -697,6 +726,22 @@
     
   
   
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#caching-between-builds" class="md-nav__link">
+    Caching between builds
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -727,6 +772,32 @@ come pre-installed with everything needed to run batect.</p>
       <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Build application</span>
         <span class="nt">run</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">./batect build</span>
 </pre></div>
+
+<h2 id="caching-between-builds">Caching between builds<a class="headerlink" href="#caching-between-builds" title="Permanent link">&para;</a></h2>
+<p>If you're using <a href="../tips/Performance.html#cache-volumes">caches</a>, you can persist these between builds with the following configuration:</p>
+<div class="codehilite"><pre><span></span><span class="nt">jobs</span><span class="p">:</span>
+  <span class="nt">build</span><span class="p">:</span>
+    <span class="nt">name</span><span class="p">:</span> <span class="s">&quot;Build&quot;</span>
+    <span class="nt">runs-on</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">ubuntu-18.04</span>
+    <span class="nt">env</span><span class="p">:</span>
+      <span class="nt">BATECT_CACHE_TYPE</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">directory</span>
+
+    <span class="nt">steps</span><span class="p">:</span>
+      <span class="p p-Indicator">-</span> <span class="nt">uses</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">actions/checkout@v1</span>
+
+      <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Cache dependencies</span>
+        <span class="nt">uses</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">actions/cache@v1</span>
+        <span class="nt">with</span><span class="p">:</span>
+          <span class="nt">path</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">.batect/caches</span>
+          <span class="nt">key</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">batect-caches-${{ hashFiles(&#39;path to a file that uniquely identifies the contents of the caches&#39;) }}</span>
+
+      <span class="p p-Indicator">-</span> <span class="c1"># ...other build steps</span>
+</pre></div>
+
+<p>The <code>key</code> should be a value that changes when the contents of the cache change, and remains constant otherwise. A good candidate is the hash of a dependency lockfile,
+such as <code>Gemfile.lock</code>, <code>package-lock.json</code>, <code>yarn.lock</code> or <code>go.sum</code>. The
+<a href="https://help.github.com/en/actions/configuring-and-managing-workflows/caching-dependencies-to-speed-up-workflows#using-the-cache-action">documentation for caching</a> has
+more details on <code>key</code>.</p>
                 
                   
                 

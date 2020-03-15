@@ -1301,6 +1301,8 @@ believe your console supports coloured output, or your console may incorrectly r
 </ul>
 <p>By default, batect will automatically pick an output style that it believes is appropriate for the environment it is running in -
 <code>fancy</code> if it believes your environment supports it, or <code>simple</code> otherwise.</p>
+<p>A TTY (and stdin) are attached to the task container when using <code>fancy</code>, <code>simple</code> and <code>quiet</code> output styles. All other containers
+(and all containers when using <code>all</code>) will not have stdin or a TTY attached.</p>
 <p>Passing this flag allows you to override what batect believes is appropriate.</p>
 <p>Example:</p>
 <div class="codehilite"><pre><span></span>./batect --output simple the-task

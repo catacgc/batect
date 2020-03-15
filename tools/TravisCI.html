@@ -524,9 +524,38 @@
       
     
     
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Travis CI
+      </label>
+    
     <a href="TravisCI.html" title="Travis CI" class="md-nav__link md-nav__link--active">
       Travis CI
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#caching-between-builds" class="md-nav__link">
+    Caching between builds
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
     
   </li>
 
@@ -697,6 +726,22 @@
     
   
   
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#caching-between-builds" class="md-nav__link">
+    Caching between builds
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -724,8 +769,21 @@ with Travis CI is to enable the Docker service.</p>
   <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">docker</span>
 </pre></div>
 
-<p>You can see a full example of using batect with Travis CI in
-<a href="https://github.com/batect/batect-sample-java">the Java sample project</a>.</p>
+<p>You can see a full example of using batect with Travis CI in <a href="https://github.com/batect/batect-sample-java">the Java sample project</a>.</p>
+<h2 id="caching-between-builds">Caching between builds<a class="headerlink" href="#caching-between-builds" title="Permanent link">&para;</a></h2>
+<p>If you're using <a href="../tips/Performance.html#cache-volumes">caches</a>, you can persist these between builds with the following configuration:</p>
+<div class="codehilite"><pre><span></span><span class="nt">dist</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">xenial</span>
+
+<span class="nt">services</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">docker</span>
+
+<span class="nt">env</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">BATECT_CACHE_TYPE=directory</span>
+
+<span class="nt">cache</span><span class="p">:</span>
+  <span class="nt">directories</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">.batect/caches</span>
+</pre></div>
                 
                   
                 

@@ -459,6 +459,13 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#caching-between-builds" class="md-nav__link">
+    Caching between builds
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#simplifying-configuration-with-circleci" class="md-nav__link">
     Simplifying configuration with CircleCI
   </a>
@@ -730,6 +737,13 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#caching-between-builds" class="md-nav__link">
+    Caching between builds
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#simplifying-configuration-with-circleci" class="md-nav__link">
     Simplifying configuration with CircleCI
   </a>
@@ -780,6 +794,31 @@ which contains Docker 18.06:</p>
 
 <p>You can see a full example of using batect with CircleCI in
 <a href="https://github.com/batect/batect-sample-golang">the Golang sample project</a>.</p>
+<h2 id="caching-between-builds">Caching between builds<a class="headerlink" href="#caching-between-builds" title="Permanent link">&para;</a></h2>
+<p>If you're using <a href="../tips/Performance.html#cache-volumes">caches</a>, you can persist these between builds with the following configuration:</p>
+<div class="codehilite"><pre><span></span><span class="nt">version</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">2</span>
+
+<span class="nt">jobs</span><span class="p">:</span>
+  <span class="nt">build</span><span class="p">:</span>
+    <span class="nt">machine</span><span class="p">:</span>
+      <span class="nt">enabled</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+      <span class="nt">image</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">circleci/classic:201808-01</span>
+    <span class="nt">environment</span><span class="p">:</span>
+      <span class="nt">BATECT_CACHE_TYPE</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">directory</span>
+    <span class="nt">steps</span><span class="p">:</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">checkout</span>
+      <span class="p p-Indicator">-</span> <span class="nt">restore_cache</span><span class="p">:</span>
+          <span class="nt">key</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">batect-caches-{{ arch }}-{{ checksum &quot;path to a file that uniquely identifies the contents of the caches&quot; }}</span>
+      <span class="p p-Indicator">-</span> <span class="c1"># ...other build steps</span>
+      <span class="p p-Indicator">-</span> <span class="nt">save_cache</span><span class="p">:</span>
+          <span class="nt">key</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">batect-caches-{{ arch }}-{{ checksum &quot;path to a file that uniquely identifies the contents of the caches&quot; }}</span>
+          <span class="nt">paths</span><span class="p">:</span>
+            <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">.batect/caches</span>
+</pre></div>
+
+<p>The <code>key</code> should be a value that changes when the contents of the cache change, and remains constant otherwise. A good candidate is the hash of a dependency lockfile,
+such as <code>Gemfile.lock</code>, <code>package-lock.json</code>, <code>yarn.lock</code> or <code>go.sum</code>. The <a href="https://circleci.com/docs/2.0/caching/">documentation for caching</a> has
+more details on <code>key</code>.</p>
 <h2 id="simplifying-configuration-with-circleci">Simplifying configuration with CircleCI<a class="headerlink" href="#simplifying-configuration-with-circleci" title="Permanent link">&para;</a></h2>
 <p>CircleCI supports <a href="https://circleci.com/docs/2.0/reusing-config/#authoring-reusable-commands">defining reusable commands</a> within your configuration file.
 This can be useful if you find yourself running the same series of commands over and over again. For example, if you have a series of jobs, each of which
