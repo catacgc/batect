@@ -4,10 +4,6 @@
   "id": "https://batect.dev/configSchema.json",
   "type": "object",
   "additionalProperties": false,
-  "required": [
-    "containers",
-    "tasks"
-  ],
   "properties": {
     "containers": {
       "$ref": "#/definitions/containers"
@@ -22,6 +18,9 @@
       "type": "string",
       "description": "The name of your project. Used to label any images built.",
       "minLength": 1
+    },
+    "include": {
+      "$ref": "#/definitions/includesList"
     }
   },
   "patternProperties": {
@@ -254,7 +253,7 @@
         "oneOf": [
           {
             "type": "string",
-            "pattern": "^\\d+:\\d+$"
+            "pattern": "^\\d+(-\\d+)?:\\d+(-\\d+)?$"
           },
           {
             "type": "object",
@@ -269,6 +268,22 @@
                 "type": "integer",
                 "description": "Port inside the container to map",
                 "minimum": 1
+              }
+            }
+          },
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "local": {
+                "type": "string",
+                "description": "Ports on the host machine to map",
+                "pattern": "^\\d+-\\d+$"
+              },
+              "container": {
+                "type": "string",
+                "description": "Ports inside the container to map",
+                "pattern": "^\\d+-\\d+$"
               }
             },
             "required": [
@@ -530,6 +545,13 @@
           "description": "Default value of the variable if one is not provided elsewhere",
           "minLength": 1
         }
+      }
+    },
+    "includesList": {
+      "type": "array",
+      "description": "List of configuration files to include in this project",
+      "items": {
+        "type": "string"
       }
     }
   }

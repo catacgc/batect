@@ -1364,7 +1364,7 @@ coloured output continue to work correctly inside the container.</p>
 <p>Two formats are supported:</p>
 <ul>
 <li>
-<p>Standard Docker <code>local:container</code> or <code>local:container:options</code> format</p>
+<p><code>local:container</code> or <code>local:container:options</code> format</p>
 </li>
 <li>
 <p>An expanded format:</p>
@@ -1419,7 +1419,7 @@ with users running on other operating systems, using Unix-style paths is recomme
 <p>Two formats are supported:</p>
 <ul>
 <li>
-<p>Standard Docker <code>local:container</code> or <code>local:container:options</code> format</p>
+<p><code>local:container</code> or <code>local:container:options</code> format</p>
 </li>
 <li>
 <p>An expanded format:
@@ -1437,15 +1437,16 @@ with users running on other operating systems, using Unix-style paths is recomme
 <p>Note that the <code>local</code> device mounts will be different for Windows and Unix-like hosts. See the <a href="https://docs.docker.com/engine/reference/commandline/run/#add-host-device-to-container---device">Docker guide for adding host devices to containers</a> for more information.</p>
 <h2 id="ports"><code>ports</code><a class="headerlink" href="#ports" title="Permanent link">&para;</a></h2>
 <p>List of ports to make available to the host machine.</p>
-<p>Only TCP ports are supported at present.</p>
-<p>Note that this does not affect how containers launched by batect as part of the same task access ports used by each other. Any container started as part of a
-task will be able to access any port on any other container at the address <code>container_name:container_port</code>. For example, if a process running in the <code>http-server</code>
-container listens on port 2000, any other container in the task can access that at <code>http-server:2000</code> without port 2000 being listed in <code>ports</code> (or an <code>EXPOSE</code>
-Dockerfile instruction).</p>
-<p>Two formats are supported:</p>
+<p>Three formats are supported:</p>
 <ul>
 <li>
-<p>Standard Docker <code>local:container</code> format. For example, <code>1234:5678</code> will make port 5678 inside the container available on the host machine at port 1234.</p>
+<p><code>local:container</code> format</p>
+<p>For example, <code>1234:5678</code> will make port 5678 inside the container available on the host machine at port 1234.</p>
+</li>
+<li>
+<p><code>local_from-local_to:container_from:container-to</code> format</p>
+<p>For example, <code>1000-1001:2025-2026</code> will make port 2025 inside the container available
+on the host machine at port 1000, and port 2026 inside the container available on the host machine at port 1001.</p>
 </li>
 <li>
 <p>An expanded format:
@@ -1456,9 +1457,21 @@ Dockerfile instruction).</p>
       <span class="c1"># This is equivalent to 1234:5678</span>
       <span class="p p-Indicator">-</span> <span class="nt">local</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1234</span>
         <span class="nt">container</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">5678</span>
+      <span class="c1"># This is equivalent to 1000-1001:2025-2026</span>
+      <span class="p p-Indicator">-</span> <span class="nt">local</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1000-1001</span>
+        <span class="nt">container</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">2025-2026</span>
 </pre></div></p>
 </li>
 </ul>
+<p>Only TCP ports are supported.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Exposing ports is only required if you need to access the container from the host machine.</p>
+<p>Any container started as part of a task will be able to access any port on any other container at the address <code>container_name:container_port</code>, even if that port
+is not listed in <code>ports</code>.</p>
+<p>For example, if a process running in the <code>http-server</code> container listens on port 2000, any other container in the task can access that at <code>http-server:2000</code>
+without port 2000 being listed in <code>ports</code> (or an <code>EXPOSE</code> Dockerfile instruction).</p>
+</div>
 <h2 id="dependencies"><code>dependencies</code><a class="headerlink" href="#dependencies" title="Permanent link">&para;</a></h2>
 <p>List of other containers that should be started and healthy before starting this container.</p>
 <p>If a dependency's image does not contain a <a href="https://docs.docker.com/engine/reference/builder/#healthcheck">health check</a>, then as soon as it has started,

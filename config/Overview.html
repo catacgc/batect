@@ -372,6 +372,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#include" class="md-nav__link">
+    include
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#tasks" class="md-nav__link">
     tasks
   </a>
@@ -793,6 +800,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#include" class="md-nav__link">
+    include
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#tasks" class="md-nav__link">
     tasks
   </a>
@@ -884,6 +898,39 @@ file is <code>/home/alex/projects/my-cool-app/batect.yml</code> and you do not p
 <li>they must not start or end with dashes, periods or underscores</li>
 </ul>
 <p><a href="Containers.html">Detailed reference for <code>containers</code></a></p>
+<h2 id="include"><code>include</code><a class="headerlink" href="#include" title="Permanent link">&para;</a></h2>
+<p>List of configuration files to include in this project.</p>
+<p>This is useful for breaking up a large project into smaller files, or for sharing configuration between projects.</p>
+<p>The format for included files is the same as described on this page. Included files can include further files, but
+cannot include a <a href="#project_name">project name</a>.</p>
+<p>Relative paths will be resolved relative to the configuration file's directory.</p>
+<p>For example, if <code>my-project/a.yml</code> contains:</p>
+<div class="codehilite"><pre><span></span><span class="nt">containers</span><span class="p">:</span>
+  <span class="nt">my-container</span><span class="p">:</span>
+    <span class="nt">image</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">alpine:1.2.3</span>
+
+<span class="nt">include</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">b.yml</span>
+</pre></div>
+
+<p>And <code>my-project/b.yml</code> contains:</p>
+<div class="codehilite"><pre><span></span><span class="nt">tasks</span><span class="p">:</span>
+  <span class="nt">my-task</span><span class="p">:</span>
+    <span class="nt">run</span><span class="p">:</span>
+      <span class="nt">container</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">my-container</span>
+</pre></div>
+
+<p>Then the resulting configuration is as if <code>a.yml</code> was:</p>
+<div class="codehilite"><pre><span></span><span class="nt">containers</span><span class="p">:</span>
+  <span class="nt">my-container</span><span class="p">:</span>
+    <span class="nt">image</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">alpine:1.2.3</span>
+
+<span class="nt">tasks</span><span class="p">:</span>
+  <span class="nt">my-task</span><span class="p">:</span>
+    <span class="nt">run</span><span class="p">:</span>
+      <span class="nt">container</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">my-container</span>
+</pre></div>
+
 <h2 id="tasks"><code>tasks</code><a class="headerlink" href="#tasks" title="Permanent link">&para;</a></h2>
 <p>Definitions for each of your tasks, the actions you launch through batect, in <code>name: options</code> format.</p>
 <p><a href="Tasks.html">Detailed reference for <code>tasks</code></a></p>
