@@ -24,7 +24,7 @@
     }
   },
   "patternProperties": {
-    "^\\.": { }
+    "^\\.": {}
   },
   "definitions": {
     "containers": {
@@ -64,7 +64,7 @@
         },
         "entrypoint": {
           "type": "string",
-          "description": "Entrypoint to use to run the command.",
+          "description": "Entrypoint to use to run the command",
           "minLength": 1
         },
         "environment": {
@@ -112,12 +112,23 @@
           "$ref": "#/definitions/capabilityList"
         },
         "additional_hostnames": {
-          "description": "Hostnames to associate with this container in addition to the default hostname.",
+          "description": "Hostnames to associate with this container in addition to the default hostname",
           "$ref": "#/definitions/additionalHostnamesList"
         },
         "setup_commands": {
-          "description": "Commands to run after the container reports as healthy but before dependency containers start.",
+          "description": "Commands to run after the container reports as healthy but before dependency containers start",
           "$ref": "#/definitions/setupCommandsList"
+        },
+        "log_driver": {
+          "type": "string",
+          "description": "Docker log driver to use"
+        },
+        "log_options": {
+          "description": "Additional options to pass to Docker log driver",
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
         }
       },
       "oneOf": [
@@ -177,8 +188,23 @@
           }
         }
       },
-      "required": [
-        "run"
+      "anyOf": [
+        {
+          "required": [
+            "run"
+          ]
+        },
+        {
+          "required": [
+            "prerequisites"
+          ],
+          "not": {
+            "required": [
+              "dependencies",
+              "run"
+            ]
+          }
+        }
       ]
     },
     "taskRunOptions": {
@@ -198,7 +224,7 @@
         },
         "entrypoint": {
           "type": "string",
-          "description": "Entrypoint to use to run the command for this task.",
+          "description": "Entrypoint to use to run the command for this task",
           "minLength": 1
         },
         "environment": {
@@ -253,7 +279,7 @@
         "oneOf": [
           {
             "type": "string",
-            "pattern": "^\\d+(-\\d+)?:\\d+(-\\d+)?$"
+            "pattern": "^\\d+(-\\d+)?:\\d+(-\\d+)?(/.*)?$"
           },
           {
             "type": "object",
@@ -268,8 +294,17 @@
                 "type": "integer",
                 "description": "Port inside the container to map",
                 "minimum": 1
+              },
+              "protocol": {
+                "type": "string",
+                "description": "Protocol to use (eg. TCP or UDP)",
+                "minLength": 1
               }
-            }
+            },
+            "required": [
+              "local",
+              "container"
+            ]
           },
           {
             "type": "object",
@@ -284,6 +319,11 @@
                 "type": "string",
                 "description": "Ports inside the container to map",
                 "pattern": "^\\d+-\\d+$"
+              },
+              "protocol": {
+                "type": "string",
+                "description": "Protocol to use (eg. TCP or UDP)",
+                "minLength": 1
               }
             },
             "required": [
@@ -439,7 +479,7 @@
             },
             "home_directory": {
               "type": "string",
-              "description": "Directory to use as home directory for user inside container.",
+              "description": "Directory to use as home directory for user inside container",
               "minLength": 1
             }
           },
