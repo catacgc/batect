@@ -11,7 +11,7 @@
         <meta name="description" content="Documentation for batect, the build and testing environments as code tool">
       
       
-        <link rel="canonical" href="https://batect.dev/tools/GitHubActions.html">
+        <link rel="canonical" href="https://batect.dev/tools/Buildkite.html">
       
       
         <meta name="author" content="Charles Korn">
@@ -21,7 +21,7 @@
     
     
       
-        <title>GitHub Actions - batect documentation</title>
+        <title>Buildkite - batect documentation</title>
       
     
     
@@ -69,7 +69,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#github-actions" class="md-skip">
+        <a href="#buildkite" class="md-skip">
           Skip to content
         </a>
       
@@ -97,7 +97,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              GitHub Actions
+              Buildkite
             
           </span>
         </div>
@@ -486,11 +486,80 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="Buildkite.html" title="Buildkite" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Buildkite
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
+        </span>
+      </label>
+    
+    <a href="Buildkite.html" title="Buildkite" class="md-nav__link md-nav__link--active">
       Buildkite
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#agent-requirements" class="md-nav__link">
+    Agent requirements
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#running-with-command-evaluation-disabled" class="md-nav__link">
+    Running with command evaluation disabled
+  </a>
+  
+    <nav class="md-nav" aria-label="Running with command evaluation disabled">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#option-1-create-step-specific-shell-scripts-that-invoke-batect" class="md-nav__link">
+    Option 1: create step-specific shell scripts that invoke batect
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#option-2-create-a-wrapper-script-that-takes-the-task-name-as-an-environment-variable" class="md-nav__link">
+    Option 2: create a wrapper script that takes the task name as an environment variable
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -510,53 +579,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        GitHub Actions
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
-        </span>
-      </label>
-    
-    <a href="GitHubActions.html" title="GitHub Actions" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="GitHubActions.html" title="GitHub Actions" class="md-nav__link">
       GitHub Actions
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-      </span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#caching-between-builds" class="md-nav__link">
-    Caching between builds
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -753,9 +780,36 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#caching-between-builds" class="md-nav__link">
-    Caching between builds
+  <a href="#agent-requirements" class="md-nav__link">
+    Agent requirements
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#running-with-command-evaluation-disabled" class="md-nav__link">
+    Running with command evaluation disabled
+  </a>
+  
+    <nav class="md-nav" aria-label="Running with command evaluation disabled">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#option-1-create-step-specific-shell-scripts-that-invoke-batect" class="md-nav__link">
+    Option 1: create step-specific shell scripts that invoke batect
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#option-2-create-a-wrapper-script-that-takes-the-task-name-as-an-environment-variable" class="md-nav__link">
+    Option 2: create a wrapper script that takes the task name as an environment variable
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -771,7 +825,7 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/batect/batect/edit/master/docs/content/tools/GitHubActions.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/batect/batect/edit/master/docs/content/tools/Buildkite.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
@@ -779,49 +833,52 @@
                   
                 
                 
-                <h1 id="github-actions">GitHub Actions<a class="headerlink" href="#github-actions" title="Permanent link">&para;</a></h1>
-<div class="admonition tip">
-<p class="admonition-title">tl;dr</p>
-<p>Use the <code>ubuntu-18.04</code> runner.</p>
-</div>
-<p><a href="https://help.github.com/en/actions/automating-your-workflow-with-github-actions/software-installed-on-github-hosted-runners#ubuntu-1804-lts">GitHub Actions' Ubuntu 18.04 runners</a>
-come pre-installed with everything needed to run batect.</p>
-<p>To use the Ubuntu 18.04 runner, specify <code>runs-on: ubuntu:18.04</code> in your configuration file. For example:</p>
-<div class="highlight"><pre><span></span><code><span class="nt">jobs</span><span class="p">:</span>
-  <span class="nt">build</span><span class="p">:</span>
-    <span class="nt">name</span><span class="p">:</span> <span class="s">&quot;Build&quot;</span>
-    <span class="nt">runs-on</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">ubuntu-18.04</span>
-    <span class="nt">steps</span><span class="p">:</span>
-      <span class="p p-Indicator">-</span> <span class="nt">uses</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">actions/checkout@v1</span>
-      <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Build application</span>
-        <span class="nt">run</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">./batect build</span>
+                <h1 id="buildkite">Buildkite<a class="headerlink" href="#buildkite" title="Permanent link">&para;</a></h1>
+<h2 id="agent-requirements">Agent requirements<a class="headerlink" href="#agent-requirements" title="Permanent link">&para;</a></h2>
+<p>batect can be run on any Buildkite agent that meets batect's <a href="../index.html#what-are-batects-system-requirements">system requirements</a> - chiefly Docker and a JVM.</p>
+<h2 id="running-with-command-evaluation-disabled">Running with command evaluation disabled<a class="headerlink" href="#running-with-command-evaluation-disabled" title="Permanent link">&para;</a></h2>
+<p>Buildkite supports <a href="https://buildkite.com/docs/agent/v2/securing#disabling-command-eval">disabling command evaluation</a>, which requires all build scripts to be
+invoked without arguments and take any necessary input as environment variables. This prevents the use of the batect wrapper script, as it expects to receive
+the task name and other options as command line options.</p>
+<p>There are two solutions to this:</p>
+<h3 id="option-1-create-step-specific-shell-scripts-that-invoke-batect">Option 1: create step-specific shell scripts that invoke batect<a class="headerlink" href="#option-1-create-step-specific-shell-scripts-that-invoke-batect" title="Permanent link">&para;</a></h3>
+<p>In this scenario, you create multiple shell scripts, one for each step in Buildkite.</p>
+<p>For example, let's say you have three steps in Buildkite: one for building, one for testing, and another for packaging. You would need to create a separate
+script for each of these steps that invokes batect.</p>
+<p>Each script would be similar to the following example script that runs a series of different kinds of tests:</p>
+<div class="highlight"><pre><span></span><code><span class="ch">#! /usr/bin/env bash</span>
+
+<span class="nb">set</span> -euo pipefail
+
+./batect unitTest
+./batect integrationTest
+./batect journeyTest
 </code></pre></div>
 
-<h2 id="caching-between-builds">Caching between builds<a class="headerlink" href="#caching-between-builds" title="Permanent link">&para;</a></h2>
-<p>If you're using <a href="../tips/Performance.html#cache-volumes">caches</a>, you can persist these between builds with the following configuration:</p>
-<div class="highlight"><pre><span></span><code><span class="nt">jobs</span><span class="p">:</span>
-  <span class="nt">build</span><span class="p">:</span>
-    <span class="nt">name</span><span class="p">:</span> <span class="s">&quot;Build&quot;</span>
-    <span class="nt">runs-on</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">ubuntu-18.04</span>
+<h3 id="option-2-create-a-wrapper-script-that-takes-the-task-name-as-an-environment-variable">Option 2: create a wrapper script that takes the task name as an environment variable<a class="headerlink" href="#option-2-create-a-wrapper-script-that-takes-the-task-name-as-an-environment-variable" title="Permanent link">&para;</a></h3>
+<p>In this scenario, you create a single shell script and invoke it with different environment variable values for each step.</p>
+<p>A basic wrapper script could look something like this:</p>
+<div class="highlight"><pre><span></span><code><span class="ch">#! /usr/bin/env bash</span>
+
+<span class="nb">set</span> -euo pipefail
+
+./batect <span class="s2">&quot;</span><span class="nv">$BATECT_TASK</span><span class="s2">&quot;</span>
+</code></pre></div>
+
+<p>Configure this in your Buildkite <code>pipeline.yml</code> as follows:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">steps</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="nt">label</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Run build</span>
+    <span class="nt">command</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">scripts/batect-wrapper.sh</span>
     <span class="nt">env</span><span class="p">:</span>
-      <span class="nt">BATECT_CACHE_TYPE</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">directory</span>
+      <span class="nt">BATECT_TASK</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">build</span>
 
-    <span class="nt">steps</span><span class="p">:</span>
-      <span class="p p-Indicator">-</span> <span class="nt">uses</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">actions/checkout@v1</span>
+  <span class="p p-Indicator">-</span> <span class="nt">label</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Run unit tests</span>
+    <span class="nt">command</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">scripts/batect-wrapper.sh</span>
+    <span class="nt">env</span><span class="p">:</span>
+      <span class="nt">BATECT_TASK</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">unitTest</span>
 
-      <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Cache dependencies</span>
-        <span class="nt">uses</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">actions/cache@v1</span>
-        <span class="nt">with</span><span class="p">:</span>
-          <span class="nt">path</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">.batect/caches</span>
-          <span class="nt">key</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">batect-caches-${{ hashFiles(&#39;path to a file that uniquely identifies the contents of the caches&#39;) }}</span>
-
-      <span class="p p-Indicator">-</span> <span class="c1"># ...other build steps</span>
+  <span class="c1"># ...and so on</span>
 </code></pre></div>
-
-<p>The <code>key</code> should be a value that changes when the contents of the cache change, and remains constant otherwise. A good candidate is the hash of a dependency lockfile,
-such as <code>Gemfile.lock</code>, <code>package-lock.json</code>, <code>yarn.lock</code> or <code>go.sum</code>. The
-<a href="https://help.github.com/en/actions/configuring-and-managing-workflows/caching-dependencies-to-speed-up-workflows#using-the-cache-action">documentation for caching</a> has
-more details on <code>key</code>.</p>
                 
               
               
@@ -840,7 +897,7 @@ more details on <code>key</code>.</p>
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="CircleCI.html" title="CircleCI" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="Seq.html" title="Seq" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -849,19 +906,19 @@ more details on <code>key</code>.</p>
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                CircleCI
+                Seq
               </div>
             </div>
           </a>
         
         
-          <a href="TravisCI.html" title="Travis CI" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="CircleCI.html" title="CircleCI" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Travis CI
+                CircleCI
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">
