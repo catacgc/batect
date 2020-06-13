@@ -47,6 +47,8 @@
     
       <link rel="stylesheet" href="../assets/3rdparty/asciinema-player.css">
     
+      <link rel="stylesheet" href="../assets/styles.css">
+    
     
       
         
@@ -351,17 +353,17 @@
       <input class="md-nav__toggle md-toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
     
     <label class="md-nav__link" for="nav-8">
-      Using batect with languages and developer tools
+      Working with languages and developer tools
       <span class="md-nav__icon md-icon">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
       </span>
     </label>
-    <nav class="md-nav" aria-label="Using batect with languages and developer tools" data-md-level="1">
+    <nav class="md-nav" aria-label="Working with languages and developer tools" data-md-level="1">
       <label class="md-nav__title" for="nav-8">
         <span class="md-nav__icon md-icon">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
         </span>
-        Using batect with languages and developer tools
+        Working with languages and developer tools
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -465,20 +467,32 @@
       <input class="md-nav__toggle md-toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9">
     
     <label class="md-nav__link" for="nav-9">
-      Using batect with CI systems
+      Working with CI systems
       <span class="md-nav__icon md-icon">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
       </span>
     </label>
-    <nav class="md-nav" aria-label="Using batect with CI systems" data-md-level="1">
+    <nav class="md-nav" aria-label="Working with CI systems" data-md-level="1">
       <label class="md-nav__title" for="nav-9">
         <span class="md-nav__icon md-icon">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
         </span>
-        Using batect with CI systems
+        Working with CI systems
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tools/CIGeneral.html" title="General" class="md-nav__link">
+      General
+    </a>
+  </li>
+
         
           
           
@@ -566,18 +580,6 @@
 
 
   <li class="md-nav__item">
-    <a href="CISetup.html" title="CI setup" class="md-nav__link">
-      CI setup
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
     <a href="IDEIntegration.html" title="IDE integration" class="md-nav__link">
       IDE integration
     </a>
@@ -636,6 +638,19 @@
   <a href="#cache-volumes" class="md-nav__link">
     Cache volumes
   </a>
+  
+    <nav class="md-nav" aria-label="Cache volumes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#windows-containers" class="md-nav__link">
+    Windows containers
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -799,6 +814,19 @@
     Cache volumes
   </a>
   
+    <nav class="md-nav" aria-label="Cache volumes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#windows-containers" class="md-nav__link">
+    Windows containers
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -851,7 +879,7 @@
 <h2 id="io-performance">I/O performance<a class="headerlink" href="#io-performance" title="Permanent link">&para;</a></h2>
 <div class="admonition tip">
 <p class="admonition-title">tl;dr</p>
-<p>If you're seeing slow build times under batect on macOS or Windows, using batect's caches as well as volume mount options such as <code>cached</code> might help</p>
+<p>If you're seeing slow build times on macOS or Windows, using batect's caches as well as volume mount options such as <code>cached</code> might help</p>
 </div>
 <p>Docker requires features only found in the Linux kernel, and so on macOS and Windows, Docker Desktop runs a lightweight Linux virtual machine
 to host Docker. However, while this works perfectly fine for most situations, there is some overhead involved in operations
@@ -892,10 +920,14 @@ are used.</p>
 file to the volume to prevent this behaviour and ensure that the volume is effectively empty.)</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>To make it easier to share caches between builds on ephemeral CI agents, you can use directories mounted from the project's <code>.batect/caches</code> directory
-instead of volumes and then archive this directory between builds. Run batect with <code>--cache-type=directory</code> to enable this behaviour.</p>
+<p>To make it easier to share caches between builds on ephemeral CI agents, you can instruct batect to use directories instead of volumes, and then use these
+directories as a starting point for subsequent builds. Run batect with <code>--cache-type=directory</code> to enable this behaviour, then save and restore the
+<code>.batect/caches</code> directory between builds.</p>
 <p>Using mounted directories instead of volumes has no performance impact on Linux.</p>
 </div>
+<h4 id="windows-containers">Windows containers<a class="headerlink" href="#windows-containers" title="Permanent link">&para;</a></h4>
+<p>The performance penalty described above does not apply when mounting directories into Windows containers. batect therefore always uses directory mounts for
+caches on Windows containers, even if <code>--cache-type=volume</code> is specified on the command line.</p>
 <h3 id="mounts-in-cached-mode">Mounts in <code>cached</code> mode<a class="headerlink" href="#mounts-in-cached-mode" title="Permanent link">&para;</a></h3>
 <div class="admonition info">
 <p class="admonition-title">Info</p>

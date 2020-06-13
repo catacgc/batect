@@ -47,6 +47,8 @@
     
       <link rel="stylesheet" href="assets/3rdparty/asciinema-player.css">
     
+      <link rel="stylesheet" href="assets/styles.css">
+    
     
       
         
@@ -268,13 +270,6 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#vagrant" class="md-nav__link">
-    ...Vagrant?
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#using-shell-scripts-to-drive-docker" class="md-nav__link">
     ...using shell scripts to drive Docker?
   </a>
@@ -289,8 +284,22 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#dojo" class="md-nav__link">
+    ...Dojo?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#ci-tools-with-a-local-runner" class="md-nav__link">
     ...CI tools with a local runner?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vagrant" class="md-nav__link">
+    ...Vagrant?
   </a>
   
 </li>
@@ -414,17 +423,17 @@
       <input class="md-nav__toggle md-toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
     
     <label class="md-nav__link" for="nav-8">
-      Using batect with languages and developer tools
+      Working with languages and developer tools
       <span class="md-nav__icon md-icon">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
       </span>
     </label>
-    <nav class="md-nav" aria-label="Using batect with languages and developer tools" data-md-level="1">
+    <nav class="md-nav" aria-label="Working with languages and developer tools" data-md-level="1">
       <label class="md-nav__title" for="nav-8">
         <span class="md-nav__icon md-icon">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
         </span>
-        Using batect with languages and developer tools
+        Working with languages and developer tools
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -528,20 +537,32 @@
       <input class="md-nav__toggle md-toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9">
     
     <label class="md-nav__link" for="nav-9">
-      Using batect with CI systems
+      Working with CI systems
       <span class="md-nav__icon md-icon">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
       </span>
     </label>
-    <nav class="md-nav" aria-label="Using batect with CI systems" data-md-level="1">
+    <nav class="md-nav" aria-label="Working with CI systems" data-md-level="1">
       <label class="md-nav__title" for="nav-9">
         <span class="md-nav__icon md-icon">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
         </span>
-        Using batect with CI systems
+        Working with CI systems
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="tools/CIGeneral.html" title="General" class="md-nav__link">
+      General
+    </a>
+  </li>
+
         
           
           
@@ -620,18 +641,6 @@
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="tips/CISetup.html" title="CI setup" class="md-nav__link">
-      CI setup
-    </a>
-  </li>
-
         
           
           
@@ -772,13 +781,6 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#vagrant" class="md-nav__link">
-    ...Vagrant?
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#using-shell-scripts-to-drive-docker" class="md-nav__link">
     ...using shell scripts to drive Docker?
   </a>
@@ -793,8 +795,22 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#dojo" class="md-nav__link">
+    ...Dojo?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#ci-tools-with-a-local-runner" class="md-nav__link">
     ...CI tools with a local runner?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vagrant" class="md-nav__link">
+    ...Vagrant?
   </a>
   
 </li>
@@ -827,12 +843,6 @@ to one of the tools mentioned below?</p>
 <p>Please <a href="https://github.com/batect/batect/issues">file an issue</a> with your questions, comments and feedback.</p>
 </div>
 <p>How does batect compare to...</p>
-<h2 id="vagrant">...Vagrant?<a class="headerlink" href="#vagrant" title="Permanent link">&para;</a></h2>
-<p>Vagrant's use of virtual machines means that it is very heavyweight, making it difficult to run multiple projects'
-environments at once. This is especially problematic on CI servers where we'd like to run multiple builds in parallel.</p>
-<p>Furthermore, the long-lived nature of virtual machines means that it's very easy for a developer's machine to get out of sync
-with the desired configuration, and nothing automatically re-provisions the machine when the configuration is changed - a
-developer has to remember to re-run the provisioning step if the configuration changes.</p>
 <h2 id="using-shell-scripts-to-drive-docker">...using shell scripts to drive Docker?<a class="headerlink" href="#using-shell-scripts-to-drive-docker" title="Permanent link">&para;</a></h2>
 <p>While it's certainly possible, it quickly gets unwieldy and is difficult to effectively parallelise tasks that can run in parallel.
 It is also difficult to ensure that all resources created during the task, such as containers and networks, are always correctly
@@ -842,15 +852,54 @@ cleaned up once the task completes, especially if the task fails.</p>
 for this purpose has a number of drawbacks.</p>
 <p>In particular, Docker Compose is geared towards describing an application and its dependencies and starting this whole stack.
 Its CLI is designed with this purpose in mind, making it frustrating to use day-to-day as a development tool and necessitating
-the use of a higher-level script to automate its usage. Furthermore, Docker Compose has no concept of tasks, further cementing
-the need to use a higher-level script to provide the ability to execute different commands, run prerequisite tasks or setup commands
-and provide the discoverability that comes with a <a href="https://www.thoughtworks.com/insights/blog/praise-go-script-part-i">go script</a>.</p>
+the use of a higher-level script to automate its usage.</p>
+<p>Furthermore, Docker Compose has no concept of tasks, further cementing the need to use a higher-level script to provide the ability
+to execute different commands, run prerequisite tasks or setup commands and provide the discoverability that comes with a
+<a href="https://www.thoughtworks.com/insights/blog/praise-go-script-part-i">go script</a>.</p>
 <p>Docker Compose is also significantly slower than batect, as it does not parallelise all operations - in one test, batect was 17%
-faster than Docker Compose. It also does not elegantly support pulling together a set of containers in different configurations
-(eg. integration vs functional testing), does not handle <a href="tips/Proxies.html">proxies</a> or
-<a href="tips/BuildArtifactsOwnedByRoot.html">file permission issues on Linux</a> automatically and has
-<a href="https://github.com/docker/compose/issues/4369">one long-standing bug</a> that makes waiting for containers to report as healthy
-difficult.</p>
+faster than Docker Compose.</p>
+<p>It also does not elegantly support pulling together a set of containers in different configurations (eg. integration vs functional
+testing), does not handle <a href="tips/Proxies.html">proxies</a> or <a href="tips/BuildArtifactsOwnedByRoot.html">file permission issues on Linux</a>
+automatically and does not support <a href="tips/WaitingForDependenciesToBeReady.html">waiting for dependencies to become healthy</a> as of
+version 3.</p>
+<h2 id="dojo">...Dojo?<a class="headerlink" href="#dojo" title="Permanent link">&para;</a></h2>
+<p><a href="https://github.com/kudulab/dojo">Dojo</a> was built with very similar goals to batect, but takes a slightly different approach.</p>
+<p>There are a number of differences between Dojo and batect:</p>
+<ul>
+<li>
+<p>Dojo requires local installation, which means different developers can be running different versions of Dojo. Batect uses a wrapper
+  script committed to source control to manage the version of batect and ensure that everyone - developers and CI - use the same version and
+  so have a consistent experience.</p>
+</li>
+<li>
+<p>Dojo requires Docker images to conform to <a href="https://github.com/kudulab/dojo#image-requirements-and-best-practices">a number of requirements</a>
+  to make the most of its features. Batect supports using any Docker image and instead requires some features to be configured in your batect
+  configuration file.</p>
+</li>
+<li>
+<p>Dojo does not have built-in support for running multiple containers and instead delegates to Docker Compose to manage multiple containers,
+  with many of the drawbacks described above including noticeably lower performance.</p>
+</li>
+<li>
+<p>Dojo does not support using a local Dockerfile. batect supports this as a first-class citizen, which allows developers to easily
+  extend images for their needs without needing to publish them to a Docker image registry.</p>
+</li>
+<li>
+<p>Dojo has no concept of tasks and requires documentation such as a readme or a separate script to communicate these to developers.
+  Batect supports tasks and prerequisites, removing the need for a separate <a href="https://www.thoughtworks.com/insights/blog/praise-go-script-part-i">go script</a>.</p>
+</li>
+<li>
+<p>Dojo has very verbose and detailed default output. batect omits details that would largely be irrelevant in day-to-day development
+  work by default and instead focuses on output from tasks.</p>
+</li>
+<li>
+<p>Dojo does not support Windows or Windows containers, whereas batect does.</p>
+</li>
+<li>
+<p>Dojo lacks more advanced features that batect provides to make working with Docker easier and faster, such as
+  <a href="tips/Performance.html#cache-volumes">cache volumes</a> and automatic configuration of <a href="tips/Proxies.html">proxies</a>.</p>
+</li>
+</ul>
 <h2 id="ci-tools-with-a-local-runner">...CI tools with a local runner?<a class="headerlink" href="#ci-tools-with-a-local-runner" title="Permanent link">&para;</a></h2>
 <p>As an example, both GitLab CI and CircleCI have CLIs that allow you to run your build on your local machine, using the same
 containers (and therefore environment) as they do when running your build on the CI server.</p>
@@ -912,6 +961,12 @@ regard to the images used for the build environment discussed above apply equall
   that spins up the app with stubbed dependencies.</p>
 </li>
 </ul>
+<h2 id="vagrant">...Vagrant?<a class="headerlink" href="#vagrant" title="Permanent link">&para;</a></h2>
+<p>Vagrant's use of virtual machines means that it is very heavyweight, making it difficult to run multiple projects'
+environments at once. This is especially problematic on CI servers where we'd like to run multiple builds in parallel.</p>
+<p>Furthermore, the long-lived nature of virtual machines means that it's very easy for a developer's machine to get out of sync
+with the desired configuration, and nothing automatically re-provisions the machine when the configuration is changed - a
+developer has to remember to re-run the provisioning step if the configuration changes.</p>
                 
               
               

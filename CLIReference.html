@@ -47,6 +47,8 @@
     
       <link rel="stylesheet" href="assets/3rdparty/asciinema-player.css">
     
+      <link rel="stylesheet" href="assets/styles.css">
+    
     
       
         
@@ -579,17 +581,17 @@
       <input class="md-nav__toggle md-toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
     
     <label class="md-nav__link" for="nav-8">
-      Using batect with languages and developer tools
+      Working with languages and developer tools
       <span class="md-nav__icon md-icon">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
       </span>
     </label>
-    <nav class="md-nav" aria-label="Using batect with languages and developer tools" data-md-level="1">
+    <nav class="md-nav" aria-label="Working with languages and developer tools" data-md-level="1">
       <label class="md-nav__title" for="nav-8">
         <span class="md-nav__icon md-icon">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
         </span>
-        Using batect with languages and developer tools
+        Working with languages and developer tools
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -693,20 +695,32 @@
       <input class="md-nav__toggle md-toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9">
     
     <label class="md-nav__link" for="nav-9">
-      Using batect with CI systems
+      Working with CI systems
       <span class="md-nav__icon md-icon">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
       </span>
     </label>
-    <nav class="md-nav" aria-label="Using batect with CI systems" data-md-level="1">
+    <nav class="md-nav" aria-label="Working with CI systems" data-md-level="1">
       <label class="md-nav__title" for="nav-9">
         <span class="md-nav__icon md-icon">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
         </span>
-        Using batect with CI systems
+        Working with CI systems
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="tools/CIGeneral.html" title="General" class="md-nav__link">
+      General
+    </a>
+  </li>
+
         
           
           
@@ -785,18 +799,6 @@
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="tips/CISetup.html" title="CI setup" class="md-nav__link">
-      CI setup
-    </a>
-  </li>
-
         
           
           
@@ -1247,7 +1249,7 @@ Use this option to instruct batect to use a different file.</p>
 </code></pre></div>
 
 <h3 id="customise-cache-storage-mechanism-cache-type">Customise cache storage mechanism <small>(<code>--cache-type</code>)</small><a class="headerlink" href="#customise-cache-storage-mechanism-cache-type" title="Permanent link">&para;</a></h3>
-<p>By default, batect will use a Docker volume for each <a href="tips/Performance.html#cache-volumes">cache mount</a>.
+<p>By default, batect will use a Docker volume for each <a href="tips/Performance.html#cache-volumes">cache mount</a> for Linux containers.
 Use this option to instruct batect to use a different storage mechanism.</p>
 <p>Supported values are:</p>
 <ul>
@@ -1256,6 +1258,10 @@ Use this option to instruct batect to use a different storage mechanism.</p>
 </ul>
 <p>The <code>BATECT_CACHE_TYPE</code> environment variable can also be used to set the default cache type. If both the environment
 variable and the <code>--cache-type</code> option are set, the value given with <code>--cache-type</code> takes precedence.</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>This option has no effect on Windows containers. Windows containers always use directory mounts for caches.</p>
+</div>
 <p>Example:</p>
 <div class="highlight"><pre><span></span><code>./batect --cache-type<span class="o">=</span>directory the-task
 </code></pre></div>
@@ -1340,10 +1346,57 @@ believe your console supports coloured output, or your console may incorrectly r
 <p><asciinema-player src="/assets/outputstyles/quiet.cast" cols="204" rows="20" preload="true" poster="npt:7"></asciinema-player></p>
 </li>
 </ul>
+<p>There are some differences between these output styles to be aware of:</p>
+<table>
+<thead>
+<tr>
+<th>Output style</th>
+<th><code>fancy</code></th>
+<th><code>simple</code></th>
+<th><code>quiet</code></th>
+<th><code>all</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Progress information</td>
+<td>Detailed (eg. download % completed, health check status)</td>
+<td>Basic (eg. image pull started, container ready)</td>
+<td>Errors only</td>
+<td>Basic (eg. image pull started, container ready)</td>
+</tr>
+<tr>
+<td>Displays output from</td>
+<td>Task container only</td>
+<td>Task container only</td>
+<td>Task container only</td>
+<td>All containers</td>
+</tr>
+<tr>
+<td>stdin connected (if present)</td>
+<td>Yes, to task container only</td>
+<td>Yes, to task container only</td>
+<td>Yes, to task container only</td>
+<td>No</td>
+</tr>
+<tr>
+<td>TTY connected (if present)</td>
+<td>Yes, to task container only</td>
+<td>Yes, to task container only</td>
+<td>Yes, to task container only</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Image build output shown</td>
+<td>Only on build failure</td>
+<td>Only on build failure</td>
+<td>Only on build failure</td>
+<td>Always</td>
+</tr>
+</tbody>
+</table>
 <p>By default, batect will automatically pick an output style that it believes is appropriate for the environment it is running in -
 <code>fancy</code> if it believes your environment supports it, or <code>simple</code> otherwise.</p>
-<p>A TTY (and stdin) are attached to the task container when using <code>fancy</code>, <code>simple</code> and <code>quiet</code> output styles. All other containers
-(and all containers when using <code>all</code>) will not have stdin or a TTY attached.</p>
 <p>Passing this flag allows you to override what batect believes is appropriate.</p>
 <p>Example:</p>
 <div class="highlight"><pre><span></span><code>./batect --output simple the-task

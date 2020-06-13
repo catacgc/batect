@@ -47,6 +47,8 @@
     
       <link rel="stylesheet" href="assets/3rdparty/asciinema-player.css">
     
+      <link rel="stylesheet" href="assets/styles.css">
+    
     
       
         
@@ -263,15 +265,36 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#first-steps-build-environment" class="md-nav__link">
-    First steps: build environment
+  <a href="#first-task" class="md-nav__link">
+    First task
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#taking-it-further-integration-and-journey-test-environments" class="md-nav__link">
-    Taking it further: integration and journey test environments
+  <a href="#first-running-application" class="md-nav__link">
+    First running application
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#first-dependency" class="md-nav__link">
+    First dependency
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#first-prerequisite" class="md-nav__link">
+    First prerequisite
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    Summary
   </a>
   
 </li>
@@ -414,17 +437,17 @@
       <input class="md-nav__toggle md-toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
     
     <label class="md-nav__link" for="nav-8">
-      Using batect with languages and developer tools
+      Working with languages and developer tools
       <span class="md-nav__icon md-icon">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
       </span>
     </label>
-    <nav class="md-nav" aria-label="Using batect with languages and developer tools" data-md-level="1">
+    <nav class="md-nav" aria-label="Working with languages and developer tools" data-md-level="1">
       <label class="md-nav__title" for="nav-8">
         <span class="md-nav__icon md-icon">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
         </span>
-        Using batect with languages and developer tools
+        Working with languages and developer tools
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -528,20 +551,32 @@
       <input class="md-nav__toggle md-toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9">
     
     <label class="md-nav__link" for="nav-9">
-      Using batect with CI systems
+      Working with CI systems
       <span class="md-nav__icon md-icon">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
       </span>
     </label>
-    <nav class="md-nav" aria-label="Using batect with CI systems" data-md-level="1">
+    <nav class="md-nav" aria-label="Working with CI systems" data-md-level="1">
       <label class="md-nav__title" for="nav-9">
         <span class="md-nav__icon md-icon">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
         </span>
-        Using batect with CI systems
+        Working with CI systems
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="tools/CIGeneral.html" title="General" class="md-nav__link">
+      General
+    </a>
+  </li>
+
         
           
           
@@ -620,18 +655,6 @@
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="tips/CISetup.html" title="CI setup" class="md-nav__link">
-      CI setup
-    </a>
-  </li>
-
         
           
           
@@ -779,15 +802,36 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#first-steps-build-environment" class="md-nav__link">
-    First steps: build environment
+  <a href="#first-task" class="md-nav__link">
+    First task
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#taking-it-further-integration-and-journey-test-environments" class="md-nav__link">
-    Taking it further: integration and journey test environments
+  <a href="#first-running-application" class="md-nav__link">
+    First running application
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#first-dependency" class="md-nav__link">
+    First dependency
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#first-prerequisite" class="md-nav__link">
+    First prerequisite
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    Summary
   </a>
   
 </li>
@@ -820,204 +864,312 @@
                 
                 
                 <h1 id="getting-started-tutorial">Getting started tutorial<a class="headerlink" href="#getting-started-tutorial" title="Permanent link">&para;</a></h1>
-<p>The samples shown below are taken from the <a href="https://github.com/batect/batect-sample-java">Java sample project</a>.</p>
+<p>In this tutorial, we'll create a TypeScript-based API that makes calls to another API and uses Yarn to manage NPM packages, and use
+batect to manage our development environment and tasks.</p>
+<p>This tutorial is based on the <a href="https://github.com/batect/batect-sample-typescript">TypeScript sample project</a>, and assumes some
+basic familiarity with Docker and Yarn.</p>
+<p>It should take 15-20 minutes to complete.</p>
 <h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h2>
 <p>Before you begin, follow the <a href="Setup.html">setup instructions</a> to setup batect.</p>
-<h2 id="first-steps-build-environment">First steps: build environment<a class="headerlink" href="#first-steps-build-environment" title="Permanent link">&para;</a></h2>
-<p>To start, we're going to configure a simple build environment, where you can build your application and run unit
-tests. This example is for a Java project that uses Gradle, and assumes that you already have Gradle set up for your project.</p>
-<ol>
+<h2 id="first-task">First task<a class="headerlink" href="#first-task" title="Permanent link">&para;</a></h2>
+<p>Let's start by defining our very first task. As is tradition, we'll be creating a "hello world" task.</p>
+<p>In batect, there are two major concepts:</p>
+<ul>
 <li>
-<p>Create a <code>batect.yml</code> configuration file in the root of your project. For example:</p>
+<p><strong>Tasks</strong> define commands to run and how to run them - for example, building your application, running tests or deploying your
+  application.</p>
+</li>
+<li>
+<p><strong>Containers</strong> define the environment tasks run in - for example, the Docker image used, the folders mounted from your local
+  machine and the ports exposed back to your local machine.</p>
+</li>
+</ul>
+<p>Both tasks and containers are defined in a YAML configuration file, normally called <code>batect.yml</code>. Let's start by defining our build
+environment container, <code>build-env</code>:</p>
 <div class="highlight"><pre><span></span><code><span class="nt">containers</span><span class="p">:</span>
   <span class="nt">build-env</span><span class="p">:</span>
-    <span class="nt">image</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">openjdk:8u141-jdk</span>
+    <span class="nt">image</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">node:14.3.0</span>
+</code></pre></div>
+
+<p><code>build-env</code> uses the publicly-available <code>node</code> image, and specifies the particular version of the image to use.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>It's a good idea to specify a particular image tag (eg. <code>14.3.0</code> in our example above) rather than using <code>latest</code> - this
+ensures everyone using your configuration runs the same image.</p>
+</div>
+<p>We can use that container to define our <code>hello-world</code> task:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">containers</span><span class="p">:</span>
+  <span class="nt">build-env</span><span class="p">:</span>
+    <span class="nt">image</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">node:14.3.0</span>
+
+<span class="hll"><span class="nt">tasks</span><span class="p">:</span>
+</span><span class="hll">  <span class="nt">hello-world</span><span class="p">:</span>
+</span><span class="hll">    <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Say hello to everyone</span>
+</span><span class="hll">    <span class="nt">run</span><span class="p">:</span>
+</span><span class="hll">      <span class="nt">container</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">build-env</span>
+</span><span class="hll">      <span class="nt">command</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">echo &#39;Hello world!&#39;</span>
+</span></code></pre></div>
+
+<p>Then we can run our task with <code>./batect hello-world</code>:</p>
+<div class="highlight"><pre><span></span><code>Running hello-world...
+build-env: running echo &#39;Hello world!&#39;
+
+Hello world!
+
+hello-world finished with exit code 0 in 1.2s.
+</code></pre></div>
+
+<p>Congratulations! You've successfully configured and run your first batect task.</p>
+<p>It's worth spending a moment to explain what batect just did:</p>
+<ul>
+<li>First, batect loaded our configuration from <code>batect.yml</code>.</li>
+<li>It then checked if the <code>node:14.3.0</code> image had already been pulled, and if it was not already pulled, pulled it.</li>
+<li>Next, it started our <code>build-env</code> container, which ran our hello world command.</li>
+<li>Once the container finished, it then cleaned up the container, leaving nothing running.</li>
+</ul>
+<p>There's one more thing we can check: <code>./batect --list-tasks</code>. <code>--list-tasks</code> doesn't run a task - instead, it prints all the available
+tasks in our configuration file, including any <a href="config/Tasks.html#description"><code>description</code></a> or <a href="config/Tasks.html#group"><code>group</code></a>.</p>
+<p>Let's try running <code>./batect --list-tasks</code> (or <code>./batect -T</code> for short) now:</p>
+<div class="highlight"><pre><span></span><code>Available tasks:
+- hello-world: Say hello to everyone
+</code></pre></div>
+
+<p>There's nothing too surprising here, given we just created our configuration file. However, as our project grows, this can be very useful
+for someone who is unfamiliar with our project and wants to understand what tasks they can perform.</p>
+<h2 id="first-running-application">First running application<a class="headerlink" href="#first-running-application" title="Permanent link">&para;</a></h2>
+<p>So we have our first task, but it's not exactly earth-shattering. Let's fix that by creating our TypeScript application.</p>
+<p>Normally, we could run <code>yarn init</code> and then <code>yarn add typescript</code> to do this, but then we're using the version of Yarn installed on our
+machine, if there even is one.</p>
+<p>It would be much better if we could use the version of Yarn available in our <code>build-env</code> container - then we don't need to install
+anything, and we don't have to worry about using different versions.</p>
+<p>To do that, let's create a <code>shell</code> task that starts a shell in our build environment:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># ... other configuration omitted for clarity</span>
+
+<span class="nt">tasks</span><span class="p">:</span>
+  <span class="nt">shell</span><span class="p">:</span>
+    <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Start a shell in the development environment</span>
+    <span class="nt">run</span><span class="p">:</span>
+      <span class="nt">container</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">build-env</span>
+      <span class="nt">command</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">bash</span>
+</code></pre></div>
+
+<p>We can run this with <code>./batect shell</code>, then run <code>yarn init .</code> and <code>yarn add typescript</code> to create a <code>package.json</code> with a reference to
+TypeScript. However, if you exit the shell with <code>exit</code>, after batect finishes cleaning up, you'll notice there's no <code>package.json</code> in
+our project directory.</p>
+<p>What happened to <code>package.json</code>? By default, containers started with batect share nothing with the host machine, so <code>package.json</code> was
+lost when the container was removed by batect. The benefit of this is that containers are as isolated as possible, making tasks run
+consistently across different machines, even different operating systems.</p>
+<p>However, complete isolation isn't particularly useful - we need to keep these files around, and we'll need to be able to share our
+source code with the container soon as well.</p>
+<p>Let's mount our project directory into <code>build-env</code> with <a href="config/Containers.html#volumes"><code>volumes</code></a>:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">containers</span><span class="p">:</span>
+  <span class="nt">build-env</span><span class="p">:</span>
+    <span class="nt">image</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">node:14.3.0</span>
+<span class="hll">    <span class="nt">volumes</span><span class="p">:</span>
+</span><span class="hll">      <span class="p p-Indicator">-</span> <span class="nt">local</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">.</span>
+</span><span class="hll">        <span class="nt">container</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">/code</span>
+</span><span class="hll">        <span class="nt">options</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">cached</span>
+</span><span class="hll">    <span class="nt">working_directory</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">/code</span>
+</span>
+<span class="c1"># ... tasks omitted for clarity</span>
+</code></pre></div>
+
+<p>With this change, when <code>build-env</code> starts, the project directory (the directory containing <code>batect.yml</code>) will be mounted into the
+container at <code>/code</code>. Setting <code>working_directory</code> to <code>/code</code> means that the container will start in that directory by default.</p>
+<p>If you start a shell with <code>./batect shell</code> and run <code>yarn init .</code> and <code>yarn add typescript</code> again, you'll notice that this time,
+<code>package.json</code> has been saved to your local machine.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>If you're using macOS or Windows, you may have noticed that <code>yarn add typescript</code> took longer than normal. This is due to the
+overhead introduced by using <code>node_modules</code> from your local machine inside the container.</p>
+<p>Unfortunately, the performance of Docker volume mounts on macOS and Windows isn't great, and even with <code>options: cached</code>, the
+difference can be noticeable.</p>
+<p>The solution is to use a batect cache for the <code>node_modules</code> folder, for example:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">containers</span><span class="p">:</span>
+  <span class="nt">build-env</span><span class="p">:</span>
+    <span class="nt">image</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">node:14.3.0</span>
     <span class="nt">volumes</span><span class="p">:</span>
       <span class="p p-Indicator">-</span> <span class="nt">local</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">.</span>
         <span class="nt">container</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">/code</span>
         <span class="nt">options</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">cached</span>
-      <span class="p p-Indicator">-</span> <span class="nt">local</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">.gradle-cache</span>
-        <span class="nt">container</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">/home/container-user/.gradle</span>
-        <span class="nt">options</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">cached</span>
-    <span class="nt">working_directory</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">/code</span>
-    <span class="nt">environment</span><span class="p">:</span>
-      <span class="nt">GRADLE_OPTS</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">-Dorg.gradle.daemon=false</span>
-    <span class="nt">run_as_current_user</span><span class="p">:</span>
-      <span class="nt">enabled</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
-      <span class="nt">home_directory</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">/home/container-user</span>
-
-<span class="nt">tasks</span><span class="p">:</span>
-  <span class="nt">build</span><span class="p">:</span>
-    <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Build the application.</span>
-    <span class="nt">run</span><span class="p">:</span>
-      <span class="nt">container</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">build-env</span>
-      <span class="nt">command</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">./gradlew assembleDist</span>
-
-  <span class="nt">unitTest</span><span class="p">:</span>
-    <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Run the unit tests.</span>
-    <span class="nt">run</span><span class="p">:</span>
-      <span class="nt">container</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">build-env</span>
-      <span class="nt">command</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">./gradlew test</span>
+<span class="hll">      <span class="p p-Indicator">-</span> <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">cache</span>
+</span><span class="hll">        <span class="nt">container</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">/code/node_modules</span>
+</span><span class="hll">        <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">node_modules</span>
+</span>    <span class="nt">working_directory</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">/code</span>
 </code></pre></div>
 
-<p>There's a bit going on here, so let's break it down:</p>
-<ul>
-<li><code>containers</code>: here we define the different containers that your application needs.
-  At the moment, we just have our one build environment container, <code>build-env</code>.<ul>
-<li>We tell batect which Docker image to use (<code>image</code>).</li>
-<li>We tell it to mount the project (<code>.</code>, the current directory) into the container at <code>/code</code>, and to start
-   the container in that directory (<code>working_directory</code>).</li>
-<li>We also mount <code>.gradle-cache</code> into the container as <code>/root/.gradle</code> - this allows Gradle to cache
-   dependencies between builds, rather than downloading them on every single run. (You probably want to
-   add this directory to your <code>.gitignore</code>.)</li>
-<li>We use <code>:cached</code> mode for the mounts to improve performance on macOS (see
-   <a href="tips/Performance.html#io-performance">this page</a> for more information). This has no effect on other operating systems.</li>
-<li>We disable the <a href="https://docs.gradle.org/current/userguide/gradle_daemon.html">Gradle daemon</a>, as running
-   it is pointless given that we create a new container for every run.</li>
-<li>We enable <a href="config/Containers.html#run_as_current_user">run as current user mode</a> to ensure that any build artifacts are
-   owned by you, and not <code>root</code>.</li>
-</ul>
-</li>
-<li><code>tasks</code>: we define our two tasks, one for building the application, and another for running the unit tests.
-  These just run the existing Gradle tasks within the build environment we just defined.</li>
-</ul>
-<p>You can define whatever tasks you want - common other tasks you might like to add include one that starts a
-  shell in the build environment (eg. one with <code>command: bash</code>) and another that automatically runs the unit
-  tests whenever the code is changed (eg. <code>command: ./gradlew --continuous test</code>).</p>
-<p>For more information on <code>batect.yml</code>, consult the <a href="config/Overview.html">documentation</a>.</p>
-</li>
-<li>
-<p>Run <code>./batect --list-tasks</code>, and you'll see the tasks that we just defined:</p>
-<div class="highlight"><pre><span></span><code>Available tasks:
-- build: Build the application.
-- unitTest: Run the unit tests.
+<p>This cache persists between each task run and doesn't incur the same performance penalty as mounting a local directory.</p>
+<p>There's more details about this in the <a href="tips/Performance.html">I/O performance section</a> of the documentation.</p>
+</div>
+<p>With that out of the way, let's create a basic HTTP API. Create a file called <code>index.ts</code> in the same directory as our <code>batect.yml</code>
+with the following contents:</p>
+<div class="highlight"><pre><span></span><code><span class="kr">import</span> <span class="o">*</span> <span class="kr">as</span> <span class="nx">express</span> <span class="nx">from</span> <span class="s2">&quot;express&quot;</span><span class="p">;</span>
+
+<span class="kr">const</span> <span class="nx">app</span> <span class="o">=</span> <span class="nx">express</span><span class="p">();</span>
+<span class="kr">const</span> <span class="nx">port</span> <span class="o">=</span> <span class="mi">8080</span><span class="p">;</span>
+
+<span class="nx">app</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">,</span> <span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">res</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="s2">&quot;Hello from the API!&quot;</span><span class="p">);</span>
+<span class="p">});</span>
+
+<span class="nx">app</span><span class="p">.</span><span class="nx">listen</span><span class="p">(</span><span class="nx">port</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Listening on port </span><span class="si">${</span><span class="nx">port</span><span class="si">}</span><span class="sb">.`</span><span class="p">);</span>
+<span class="p">});</span>
 </code></pre></div>
 
-</li>
-<li>
-<p>Run <code>./batect build</code> and batect will pull the image used for your build environment, start it and run Gradle within it.
-   (Note that this may take a while the first time as the Docker image must be downloaded first.)</p>
-</li>
-<li>
-<p>Similarly, if you run <code>./batect unitTest</code>, batect will start a build environment, run your unit tests within it, and then
-   clean up the build environment.</p>
-</li>
-</ol>
-<p>That's it! Your builds and unit tests now run in an isolated and consistent build environment, and you can easily change the
-configuration of your build environment without having to install or configure anything manually on every developer or CI machine.</p>
-<h2 id="taking-it-further-integration-and-journey-test-environments">Taking it further: integration and journey test environments<a class="headerlink" href="#taking-it-further-integration-and-journey-test-environments" title="Permanent link">&para;</a></h2>
-<p>So we've set up an isolated and repeatable build environment. However, where batect really shines is setting up integration and
-journey test environments - environments that require spinning up real (or fake) versions of dependencies such as databases or downstream services.</p>
-<p>Let's imagine our application just has one dependency, a Postgres database. We can define a Docker image for this with a Dockerfile:</p>
-<div class="highlight"><pre><span></span><code><span class="k">FROM</span> <span class="s">postgres:9.6.2</span>
-</code></pre></div>
-
-<p>Save this as <code>.batect/database/Dockerfile</code>.</p>
-<p>So far, so good - this is just like what we had before for the build environment. However, this will start an empty Postgres database,
-and our application probably needs at least a database and a table or two. Create a SQL script called <code>create-structure.sql</code> that creates
-your database tables and save it in the <code>.batect/database</code> folder you just created.</p>
-<p>We can then take advantage of a feature of the <a href="https://hub.docker.com/r/library/postgres/">standard Postgres image</a> to have this SQL
-script run when the container starts. Any <code>.sql</code> file in the <code>/docker-entrypoint-initdb.d</code> directory will automatically be run when
-the container starts, so if we copy our <code>create-structure.sql</code> script into that directory in the image, then whenever it is started,
-our database structure will be created. So our Dockerfile now looks like:</p>
-<div class="highlight"><pre><span></span><code><span class="k">FROM</span> <span class="s">postgres:9.6.2</span>
-
-<span class="k">COPY</span> create-structure.sql /docker-entrypoint-initdb.d/
-</code></pre></div>
-
-<p>There's one last thing we need to think about though. When Docker starts our database container, all we know is that the container has
-started - we have no way to know if the database is actually ready for use. If we want to run tests against our database, we don't want
-to start running those tests until it's actually ready to use. While Postgres is usually pretty fast to start up, it's not instantaneous,
-and other things can take anywhere from a few moments to a minute or two to start up and be ready. We can use
-<a href="https://docs.docker.com/engine/reference/builder/#healthcheck">Docker's health check feature</a> to indicate when a container is ready for use.</p>
-<p>In our case, we can take <a href="https://github.com/batect/batect-sample-java/tree/master/.batect/database/health-check.sh">the health check script</a>
-from the sample project and copy it into our <code>.batect/database</code> folder. All it does is try to issue a simple query against the
-database - if that succeeds, we can assume that the database is up and running. (There's
-<a href="https://github.com/docker-library/healthcheck/">a collection of sample health check scripts provided by Docker</a> you can use.)</p>
-<p>Then we need to tell Docker where to find our health check script, so we need to add it to our Dockerfile:</p>
-<div class="highlight"><pre><span></span><code><span class="k">FROM</span> <span class="s">postgres:9.6.2</span>
-
-<span class="k">RUN</span> mkdir -p /tools
-<span class="k">COPY</span> health-check.sh /tools/
-<span class="k">HEALTHCHECK</span> --interval<span class="o">=</span>2s <span class="k">CMD</span> /tools/health-check.sh
-
-<span class="k">COPY</span> create-structure.sql /docker-entrypoint-initdb.d/
-</code></pre></div>
-
-<p>So, now we have a Dockerfile that describes how to start up our database, and how to tell when it's ready for use. Now we just need to configure
-batect to run our tests.</p>
-<p>First of all, let's define our database container:</p>
-<div class="highlight"><pre><span></span><code><span class="nt">containers</span><span class="p">:</span>
-
-  <span class="l l-Scalar l-Scalar-Plain">...</span>
-
-  <span class="l l-Scalar l-Scalar-Plain">database</span><span class="p p-Indicator">:</span>
-    <span class="nt">build_directory</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">.batect/database</span>
-    <span class="nt">environment</span><span class="p">:</span>
-      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">POSTGRES_USER=international-transfers-service-user</span>
-      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">POSTGRES_PASSWORD=TheSuperSecretPassword</span>
-      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">POSTGRES_DB=international-transfers-service</span>
-</code></pre></div>
-
-<p>This uses the environment variables defined by the Postgres image to set the username, password and database name to use to connect to it. We
-could have specified them in the Dockerfile with <code>ENV</code> statements, but this works as well.</p>
-<p>Then we just need to define our integration test task:</p>
+<p>We'll need a few more Yarn packages - start another shell and run <code>yarn add @types/express express ts-node</code> to add the remaining
+dependencies.</p>
+<p>Let's run our application and see it in action. Add a <code>run</code> task to <code>batect.yml</code>:</p>
 <div class="highlight"><pre><span></span><code><span class="nt">tasks</span><span class="p">:</span>
-
-  <span class="l l-Scalar l-Scalar-Plain">...</span>
-
-  <span class="l l-Scalar l-Scalar-Plain">integrationTest</span><span class="p p-Indicator">:</span>
-    <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Run the integration tests.</span>
+  <span class="nt">run</span><span class="p">:</span>
+    <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Run the application</span>
     <span class="nt">run</span><span class="p">:</span>
       <span class="nt">container</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">build-env</span>
-      <span class="nt">command</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">./gradlew integrationTest</span>
-    <span class="nt">start</span><span class="p">:</span>
-      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">database</span>
+      <span class="nt">command</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">yarn exec ts-node index.ts</span>
+      <span class="nt">ports</span><span class="p">:</span>
+        <span class="p p-Indicator">-</span> <span class="nt">local</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">8080</span>
+          <span class="nt">container</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">8080</span>
+
+<span class="c1"># ... other configuration omitted for clarity</span>
 </code></pre></div>
 
-<p>This is just like the build and unit test tasks we defined before, but we now also specify our database container in <code>start</code>. batect will start
-any containers listed in <code>start</code> and wait for them to become healthy before starting the container given in <code>run</code>.</p>
-<p>Under the covers, batect will also create an isolated network for all of the task's containers, so that they can communicate with one another
-without interfering with anything else on your machine. (They'll still have access to the internet and anything else they could access if they
-were running directly on your machine though.) This means that the integration tests just need to connect to the host <code>database</code> with the username
-<code>international-transfers-service-user</code> and password <code>TheSuperSecretPassword</code>, and Docker will automatically forward that to the database container.</p>
-<p>And, after your tests have finished, batect will then remove all the containers it started, leaving your machine in the same state it was before
-you started.</p>
-<p>Similarly, if we want to run some journey tests that test our application end-to-end, we just need to create a Dockerfile for our application,
-then define it in <code>batect.yml</code>:</p>
-<div class="highlight"><pre><span></span><code><span class="nt">containers</span><span class="p">:</span>
-
-  <span class="l l-Scalar l-Scalar-Plain">...</span>
-
-  <span class="l l-Scalar l-Scalar-Plain">international-transfers-service</span><span class="p p-Indicator">:</span>
-    <span class="nt">build_directory</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">.batect/international-transfers-service</span>
-    <span class="nt">dependencies</span><span class="p">:</span>
-      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">database</span>
-</code></pre></div>
-
-<p>...and then add a task:</p>
+<p>Our <code>command</code> uses Yarn and <code>ts-node</code> to run our TypeScript application, and maps port 8080 on our local machine to port 8080 on the
+container. This means that if we go to <a href="http://localhost:8080">http://localhost:8080</a> on our local machine, we'll see our "Hello from
+the API!" message.</p>
+<p>batect also supports mapping ports in container definitions, however, given we only need the port when running the application,
+we've mapped the port as part of the task definition. Both have exactly the same end result.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>We're using <code>ts-node</code> in this tutorial because it's simple and convenient. A production-grade application would compile TypeScript
+down to JavaScript using <code>tsc</code> and run it using <code>node</code>. We'll change this below.</p>
+</div>
+<p>We're pretty much done now - we can run our application in a consistent, isolated environment with a single command: <code>./batect run</code>.</p>
+<p>However, there's one more thing we should do to make it easy for others to start using our project. With the current setup, people
+using our project will need to run <code>./batect shell</code> and then run <code>yarn install</code> to download the NPM packages we're using. It would be
+much better if there was a batect task they could run that did this for them, so let's add one:</p>
 <div class="highlight"><pre><span></span><code><span class="nt">tasks</span><span class="p">:</span>
-
-  <span class="l l-Scalar l-Scalar-Plain">...</span>
-
-  <span class="l l-Scalar l-Scalar-Plain">journeyTest</span><span class="p p-Indicator">:</span>
-    <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Run the journey tests.</span>
+  <span class="nt">setup</span><span class="p">:</span>
+    <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Install dependencies needed to build and run the application</span>
     <span class="nt">run</span><span class="p">:</span>
       <span class="nt">container</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">build-env</span>
-      <span class="nt">command</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">./gradlew journeyTest</span>
-    <span class="nt">start</span><span class="p">:</span>
-      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">international-transfers-service</span>
-    <span class="nt">prerequisites</span><span class="p">:</span>
-      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">build</span>
+      <span class="nt">command</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">yarn install</span>
+
+<span class="c1"># ... other configuration omitted for clarity</span>
 </code></pre></div>
 
-<p>Note that in this case, we specify that the database container is a dependency of the application container - this means that batect will first
-start the database container and wait for it to become healthy, then start the application and wait for it to become healthy, and then run the
-journey tests. We also specify that the build task should run before starting the journey tests - this is so that when we start the application,
-we start the most recent version of it.</p>
+<p>Now, when someone wants to start using our project, they just need to run <code>./batect setup</code> once, then <code>./batect run</code> to start the
+application - easy!</p>
+<h2 id="first-dependency">First dependency<a class="headerlink" href="#first-dependency" title="Permanent link">&para;</a></h2>
+<p>Now that we've got a basic API up and running, let's expand our API to include calling an external service - and expand our batect setup
+to orchestrate setting up both our application and the external service. We're going to enhance our 'hello world' message with a joke of
+the day.</p>
+<p>Let's start by adding the joke service to our <code>batect.yml</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">containers</span><span class="p">:</span>
+  <span class="c1"># ... build-env omitted for clarity</span>
+
+<span class="hll">  <span class="nt">joke-service</span><span class="p">:</span>
+</span><span class="hll">    <span class="nt">image</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">yesinteractive/dadjokes</span>
+</span></code></pre></div>
+
+<p>We'll also need to tell batect to start <code>joke-service</code> when it runs our application. We can do this by adding it as a dependency for the
+<code>run</code> task:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">tasks</span><span class="p">:</span>
+  <span class="nt">run</span><span class="p">:</span>
+    <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Run the application</span>
+<span class="hll">    <span class="nt">dependencies</span><span class="p">:</span>
+</span><span class="hll">      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">joke-service</span>
+</span>    <span class="nt">run</span><span class="p">:</span>
+      <span class="nt">container</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">build-env</span>
+      <span class="nt">command</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">yarn exec ts-node index.ts</span>
+      <span class="nt">ports</span><span class="p">:</span>
+        <span class="p p-Indicator">-</span> <span class="nt">local</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">8080</span>
+          <span class="nt">container</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">8080</span>
+</code></pre></div>
+
+<p>Finally, we need to update our application to call the service and return the joke in our message. The joke service responds to <code>GET /</code>
+requests with jokes, so let's call that endpoint in <code>index.ts</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="hll"><span class="kr">import</span> <span class="nx">fetch</span> <span class="nx">from</span> <span class="s2">&quot;node-fetch&quot;</span><span class="p">;</span>
+</span><span class="kr">import</span> <span class="o">*</span> <span class="kr">as</span> <span class="nx">express</span> <span class="nx">from</span> <span class="s2">&quot;express&quot;</span><span class="p">;</span>
+
+<span class="kr">const</span> <span class="nx">app</span> <span class="o">=</span> <span class="nx">express</span><span class="p">();</span>
+<span class="kr">const</span> <span class="nx">port</span> <span class="o">=</span> <span class="mi">8080</span><span class="p">;</span>
+
+<span class="hll"><span class="nx">app</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">,</span> <span class="nx">async</span> <span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+</span><span class="hll">  <span class="kr">const</span> <span class="nx">response</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">fetch</span><span class="p">(</span><span class="s2">&quot;http://joke-service&quot;</span><span class="p">);</span>
+</span><span class="hll">
+</span><span class="hll">  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">response</span><span class="p">.</span><span class="nx">ok</span><span class="p">)</span> <span class="p">{</span>
+</span><span class="hll">    <span class="nx">res</span><span class="p">.</span><span class="nx">sendStatus</span><span class="p">(</span><span class="mi">503</span><span class="p">);</span>
+</span><span class="hll">    <span class="nx">res</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="sb">`Joke service call failed with HTTP </span><span class="si">${</span><span class="nx">response</span><span class="p">.</span><span class="nx">status</span><span class="si">}</span><span class="sb"> (</span><span class="si">${</span><span class="nx">response</span><span class="p">.</span><span class="nx">statusText</span><span class="si">}</span><span class="sb">)`</span><span class="p">);</span>
+</span><span class="hll">    <span class="k">return</span><span class="p">;</span>
+</span><span class="hll">  <span class="p">}</span>
+</span><span class="hll">
+</span><span class="hll">  <span class="kr">const</span> <span class="nx">responseBody</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">response</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
+</span><span class="hll">
+</span><span class="hll">  <span class="nx">res</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="sb">`Hello from the API! The joke of the day is: </span><span class="si">${</span><span class="nx">responseBody</span><span class="p">.</span><span class="nx">Joke</span><span class="p">.</span><span class="nx">Opener</span><span class="si">}</span><span class="sb"> </span><span class="si">${</span><span class="nx">responseBody</span><span class="p">.</span><span class="nx">Joke</span><span class="p">.</span><span class="nx">Punchline</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+</span><span class="hll"><span class="p">});</span>
+</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">listen</span><span class="p">(</span><span class="nx">port</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Listening on port </span><span class="si">${</span><span class="nx">port</span><span class="si">}</span><span class="sb">.`</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div>
+
+<p>We now have a dependency on the <code>node-fetch</code> package, so run <code>yarn add node-fetch @types/node-fetch</code> from a shell to add it to <code>package.json</code>.</p>
+<p>Finally, we can run the application with <code>./batect run</code>, and then open <a href="http://localhost:8080">http://localhost:8080</a> to see our new message,
+complete with joke:</p>
+<div class="highlight"><pre><span></span><code>Hello from the API! The joke of the day is: I made a belt out of watches once... It was a waist of time.
+</code></pre></div>
+
+<p>You might be wondering why we didn't have to expose any ports on the <code>joke-service</code> container, and how we could use <code>joke-service</code> as a hostname
+to address that container. Under the hood, when batect starts a task, it also creates a <a href="https://docs.docker.com/network/bridge/">Docker network</a>
+and adds all containers in the task to that network. This allows them to address each other by name (eg. making HTTP requests to <code>joke-service</code>)
+and access any port without explicitly exposing the port or exposing it on the host machine.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>This same technique can be used to run integration or end-to-end tests against dependencies like external services or databases in consistent,
+isolated environments.</p>
+<p>Take a look at the <a href="SampleProjects.html">sample projects</a> for some examples of this. batect can also help
+<a href="tips/WaitingForDependenciesToBeReady.html">manage the startup order of dependencies</a> to reduce flakiness and retries in tests.</p>
+</div>
+<h2 id="first-prerequisite">First prerequisite<a class="headerlink" href="#first-prerequisite" title="Permanent link">&para;</a></h2>
+<p>The final major feature of batect that we'll explore is the concept of <a href="config/Tasks.html#prerequisites">prerequisites</a>.</p>
+<p>These allow you to declare that one task requires another to run first. For example, maybe your application needs to be compiled before
+it is run, some data needs to be generated before the tests are executed, or a number of tasks should be run as part of a pre-commit check.</p>
+<p>To see this in action, let's add a task to compile our TypeScript down to JavaScript:</p>
+<div class="highlight"><pre><span></span><code>  <span class="nt">build</span><span class="p">:</span>
+    <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Build the application</span>
+    <span class="nt">run</span><span class="p">:</span>
+      <span class="nt">container</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">build-env</span>
+      <span class="nt">command</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">yarn exec tsc -- --outDir build --sourceMap --strict index.ts</span>
+</code></pre></div>
+
+<p>We can now change our <code>run</code> task to run <code>build</code> and then run that built JavaScript:</p>
+<div class="highlight"><pre><span></span><code>  <span class="nt">run</span><span class="p">:</span>
+    <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Run the application</span>
+<span class="hll">    <span class="nt">prerequisites</span><span class="p">:</span>
+</span><span class="hll">      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">build</span>
+</span>    <span class="nt">run</span><span class="p">:</span>
+      <span class="nt">container</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">build-env</span>
+<span class="hll">      <span class="nt">command</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">yarn exec node -- build/index.js</span>
+</span>      <span class="nt">ports</span><span class="p">:</span>
+        <span class="p p-Indicator">-</span> <span class="nt">local</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">8080</span>
+          <span class="nt">container</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">8080</span>
+</code></pre></div>
+
+<p>Voila! Running <code>./batect run</code> now runs the <code>build</code> task, then starts <code>run</code> to use our freshly built code.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>We're using <code>yarn exec</code> to start <code>node</code> in <code>run</code> to workaround issues with <code>node</code> not responding to signals such as Ctrl+C when running
+in a container. There are more details on this in the <a href="tools/Node.html#issues-with-signals-not-being-handled-correctly">Node usage section</a>
+of the batect documentation, including another solution to the issue.</p>
+</div>
+<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
+<p>We've finished our whirlwind tour of batect. We can now easily setup, build and run our application in an isolated, consistent, repeatable
+way, and others can quickly start working with our project just by running <code>./batect --list-tasks</code>.</p>
 <h2 id="where-next">Where next?<a class="headerlink" href="#where-next" title="Permanent link">&para;</a></h2>
-<p>There's a comprehensive <a href="config/Overview.html">reference page for the configuration file</a>, and a number of <a href="SampleProjects.html">sample applications</a>
-you can take a look at.</p>
+<ul>
+<li>Take a look at the many <a href="SampleProjects.html">sample projects</a> for inspiration for your own projects</li>
+<li>Dive into the comprehensive <a href="config/Overview.html">reference for configuration options</a></li>
+</ul>
                 
               
               

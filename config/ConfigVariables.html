@@ -47,6 +47,8 @@
     
       <link rel="stylesheet" href="../assets/3rdparty/asciinema-player.css">
     
+      <link rel="stylesheet" href="../assets/styles.css">
+    
     
       
         
@@ -326,6 +328,26 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#built-in-config-variables" class="md-nav__link">
+    Built-in config variables
+  </a>
+  
+    <nav class="md-nav" aria-label="Built-in config variables">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#batectproject_directory" class="md-nav__link">
+    batect.project_directory
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#definition" class="md-nav__link">
     Definition
   </a>
@@ -449,17 +471,17 @@
       <input class="md-nav__toggle md-toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
     
     <label class="md-nav__link" for="nav-8">
-      Using batect with languages and developer tools
+      Working with languages and developer tools
       <span class="md-nav__icon md-icon">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
       </span>
     </label>
-    <nav class="md-nav" aria-label="Using batect with languages and developer tools" data-md-level="1">
+    <nav class="md-nav" aria-label="Working with languages and developer tools" data-md-level="1">
       <label class="md-nav__title" for="nav-8">
         <span class="md-nav__icon md-icon">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
         </span>
-        Using batect with languages and developer tools
+        Working with languages and developer tools
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -563,20 +585,32 @@
       <input class="md-nav__toggle md-toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9">
     
     <label class="md-nav__link" for="nav-9">
-      Using batect with CI systems
+      Working with CI systems
       <span class="md-nav__icon md-icon">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
       </span>
     </label>
-    <nav class="md-nav" aria-label="Using batect with CI systems" data-md-level="1">
+    <nav class="md-nav" aria-label="Working with CI systems" data-md-level="1">
       <label class="md-nav__title" for="nav-9">
         <span class="md-nav__icon md-icon">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
         </span>
-        Using batect with CI systems
+        Working with CI systems
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tools/CIGeneral.html" title="General" class="md-nav__link">
+      General
+    </a>
+  </li>
+
         
           
           
@@ -655,18 +689,6 @@
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../tips/CISetup.html" title="CI setup" class="md-nav__link">
-      CI setup
-    </a>
-  </li>
-
         
           
           
@@ -814,6 +836,26 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#built-in-config-variables" class="md-nav__link">
+    Built-in config variables
+  </a>
+  
+    <nav class="md-nav" aria-label="Built-in config variables">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#batectproject_directory" class="md-nav__link">
+    batect.project_directory
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#definition" class="md-nav__link">
     Definition
   </a>
@@ -900,7 +942,7 @@ of batect.</p>
 <li>Simplifying management of developer-specific preferences (eg. a developer's preferred log output level)</li>
 <li>Simplifying management of sets of environment-specific settings (eg. managing sets of test environment connection settings for a CI server)</li>
 </ul>
-<p>Config variables can be used anywhere <a href="Overview.html#expressions">expressions</a> are supported.</p>
+<p>Config variables can be used anywhere <a href="Overview.html#expressions">expressions</a> are supported. Reference config variables with the syntax <code>&lt;name</code> or <code>&lt;{name}</code>.</p>
 <h2 id="values">Values<a class="headerlink" href="#values" title="Permanent link">&para;</a></h2>
 <p>Values for config variables are taken from the following sources, with higher values taking precedence:</p>
 <ul>
@@ -909,6 +951,27 @@ of batect.</p>
 <li>the default value</li>
 </ul>
 <p>If a variable is referenced but no value is available for it, an error occurs.</p>
+<h2 id="built-in-config-variables">Built-in config variables<a class="headerlink" href="#built-in-config-variables" title="Permanent link">&para;</a></h2>
+<p>There is one built-in config variable:</p>
+<h3 id="batectproject_directory"><code>batect.project_directory</code><a class="headerlink" href="#batectproject_directory" title="Permanent link">&para;</a></h3>
+<p>Contains the full path to the directory containing the root configuration file in use.</p>
+<p>Normally, this is the directory containing <code>batect.yml</code> unless the configuration file has been overridden with the
+<a href="../CLIReference.html#use-a-non-standard-configuration-file-name-config-file-or-f"><code>--config-file</code> / <code>-f</code> command line option</a>.</p>
+<p>This is particularly useful in configuration files imported into the project with <code>include</code>. For example, if <code>/my-project/a.yml</code> contains:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">include</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">includes/b.yml</span>
+</code></pre></div>
+
+<p>And <code>/my-project/includes/b.yml</code> contains:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">containers</span><span class="p">:</span>
+  <span class="nt">my-container</span><span class="p">:</span>
+    <span class="nt">image</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">alpine:1.2.3</span>
+    <span class="nt">volumes</span><span class="p">:</span>
+      <span class="p p-Indicator">-</span> <span class="nt">local</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;{batect.project_directory}/scripts</span>
+        <span class="nt">container</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">/code/scripts</span>
+</code></pre></div>
+
+<p>Then the directory <code>/my-project/scripts</code> will be mounted into the <code>my-container</code> container at <code>/code/scripts</code>.</p>
 <h2 id="definition">Definition<a class="headerlink" href="#definition" title="Permanent link">&para;</a></h2>
 <p>Each config variable definition is made up of:</p>
 <h3 id="description"><code>description</code><a class="headerlink" href="#description" title="Permanent link">&para;</a></h3>

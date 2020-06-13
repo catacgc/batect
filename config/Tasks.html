@@ -47,6 +47,8 @@
     
       <link rel="stylesheet" href="../assets/3rdparty/asciinema-player.css">
     
+      <link rel="stylesheet" href="../assets/styles.css">
+    
     
       
         
@@ -361,6 +363,54 @@
     run
   </a>
   
+    <nav class="md-nav" aria-label="run">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#container" class="md-nav__link">
+    container
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#command" class="md-nav__link">
+    command
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#entrypoint" class="md-nav__link">
+    entrypoint
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#environment" class="md-nav__link">
+    environment
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ports" class="md-nav__link">
+    ports
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#working_directory" class="md-nav__link">
+    working_directory
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -471,17 +521,17 @@
       <input class="md-nav__toggle md-toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
     
     <label class="md-nav__link" for="nav-8">
-      Using batect with languages and developer tools
+      Working with languages and developer tools
       <span class="md-nav__icon md-icon">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
       </span>
     </label>
-    <nav class="md-nav" aria-label="Using batect with languages and developer tools" data-md-level="1">
+    <nav class="md-nav" aria-label="Working with languages and developer tools" data-md-level="1">
       <label class="md-nav__title" for="nav-8">
         <span class="md-nav__icon md-icon">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
         </span>
-        Using batect with languages and developer tools
+        Working with languages and developer tools
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -585,20 +635,32 @@
       <input class="md-nav__toggle md-toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9">
     
     <label class="md-nav__link" for="nav-9">
-      Using batect with CI systems
+      Working with CI systems
       <span class="md-nav__icon md-icon">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
       </span>
     </label>
-    <nav class="md-nav" aria-label="Using batect with CI systems" data-md-level="1">
+    <nav class="md-nav" aria-label="Working with CI systems" data-md-level="1">
       <label class="md-nav__title" for="nav-9">
         <span class="md-nav__icon md-icon">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
         </span>
-        Using batect with CI systems
+        Working with CI systems
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tools/CIGeneral.html" title="General" class="md-nav__link">
+      General
+    </a>
+  </li>
+
         
           
           
@@ -677,18 +739,6 @@
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../tips/CISetup.html" title="CI setup" class="md-nav__link">
-      CI setup
-    </a>
-  </li>
-
         
           
           
@@ -847,6 +897,54 @@
     run
   </a>
   
+    <nav class="md-nav" aria-label="run">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#container" class="md-nav__link">
+    container
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#command" class="md-nav__link">
+    command
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#entrypoint" class="md-nav__link">
+    entrypoint
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#environment" class="md-nav__link">
+    environment
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ports" class="md-nav__link">
+    ports
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#working_directory" class="md-nav__link">
+    working_directory
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -947,48 +1045,37 @@ of batect.</p>
 <p>Specifies what to do when this task starts.</p>
 <p>If <code>run</code> is not provided, then <code>prerequisites</code> is required and the tasks listed in <code>prerequisites</code> are run to completion before considering this task complete.</p>
 <p><code>run</code> is made up of the following fields:</p>
-<ul>
-<li>
-<p><code>container</code> <a href="Containers.html">Container</a> to run for this task. <strong>Required.</strong></p>
-</li>
-<li>
-<p><code>command</code> Command to run for this task.</p>
+<h3 id="container"><code>container</code><a class="headerlink" href="#container" title="Permanent link">&para;</a></h3>
+<p><a href="Containers.html">Container</a> to run for this task. <strong>Required.</strong></p>
+<h3 id="command"><code>command</code><a class="headerlink" href="#command" title="Permanent link">&para;</a></h3>
+<p>Command to run for this task.</p>
 <p>Overrides any command specified on the container definition and the image's default command. If no command is provided here,
 <a href="Containers.html#command">the command specified on the container definition</a> is used if there is one, otherwise the image's default command is used.</p>
 <p>Just like when specifying a command for a container, this command is passed to the image's <code>ENTRYPOINT</code>, if there is one. This can prevent
 shell syntax features like <code>$MY_ENVIRONMENT_VARIABLE</code> and <code>&amp;&amp;</code> from working. See the
 <a href="Containers.html#command-entrypoint-note">note about entrypoints in the documentation for containers</a> for more information.</p>
-</li>
-</ul>
-<p><a id="entrypoint"></a></p>
-<ul>
-<li>
-<p><code>entrypoint</code> Entrypoint to use to run the command.</p>
+<h3 id="entrypoint"><code>entrypoint</code><a class="headerlink" href="#entrypoint" title="Permanent link">&para;</a></h3>
+<p>Entrypoint to use to run the command.</p>
 <p>Overrides any entrypoint specified on the container definition and the image's default entrypoint. If no entrypoint is provided here,
 <a href="Containers.html#entrypoint">the entrypoint specified on the container definition</a> is used if there is one, otherwise the image's default entrypoint is used.</p>
 <p>Applies to whichever command takes precedence, whether that is the command specified on this task, the <a href="Containers.html#command">command specified on the container</a>,
 or the image's default command.</p>
-</li>
-<li>
-<p><code>environment</code> List of environment variables (in <code>name: value</code> format) to pass to the container, in addition to those defined on the
-  container itself.</p>
+<h3 id="environment"><code>environment</code><a class="headerlink" href="#environment" title="Permanent link">&para;</a></h3>
+<p>List of environment variables (in <code>name: value</code> format) to pass to the container, in addition to those defined on the container itself.</p>
 <p>If a variable is specified both here and on the container itself, the value given here will override the value defined on the container.</p>
 <p>Values can be <a href="Overview.html#expressions">expressions</a>.</p>
-</li>
-<li>
-<p><code>ports</code> List of port mappings to create for the container, in addition to those defined on the container itself.</p>
+<h3 id="ports"><code>ports</code><a class="headerlink" href="#ports" title="Permanent link">&para;</a></h3>
+<p>List of port mappings to create for the container, in addition to those defined on the container itself.</p>
 <p>Behaves identically to <a href="Containers.html#ports">specifying a port mapping directly on the container</a>, and supports the same syntax.</p>
-</li>
-<li>
-<p><code>working_directory</code> Working directory to use for this task's container.</p>
+<h3 id="working_directory"><code>working_directory</code><a class="headerlink" href="#working_directory" title="Permanent link">&para;</a></h3>
+<p>Working directory to use for this task's container.</p>
 <p>Overrides any working directory on the container definition and the image's default working directory. If no working directory is provided here,
 <a href="Containers.html#working_directory">the working directory specified on the container definition</a> is used if there is one, otherwise the image's default
 working directory is used.</p>
-</li>
-</ul>
 <h2 id="dependencies"><code>dependencies</code><a class="headerlink" href="#dependencies" title="Permanent link">&para;</a></h2>
-<p>List of other containers (not tasks) that should be started and healthy before starting the task container given in <code>run</code>.</p>
-<p>The behaviour is the same as if the dependencies were specified for the <code>dependencies</code> property of the task's container's definition.</p>
+<p>List of other containers (not tasks) that should be started and healthy before starting the task container given in <code>run</code>, in addition to those defined on the container itself.</p>
+<p>The behaviour is the same as if the dependencies were specified for the <a href="Containers.html#dependencies"><code>dependencies</code></a> property of the task's
+container's definition.</p>
 <h2 id="prerequisites"><code>prerequisites</code><a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
 <p>List of other tasks that should be run to completion before running this task.</p>
 <p>If a prerequisite task finishes with a non-zero exit code, then neither this task nor any other prerequisites will be run.</p>

@@ -11,7 +11,7 @@
         <meta name="description" content="Documentation for batect, the build and testing environments as code tool">
       
       
-        <link rel="canonical" href="https://batect.dev/tips/CISetup.html">
+        <link rel="canonical" href="https://batect.dev/tools/CIGeneral.html">
       
       
         <meta name="author" content="Charles Korn">
@@ -21,7 +21,7 @@
     
     
       
-        <title>CI setup - batect documentation</title>
+        <title>General - batect documentation</title>
       
     
     
@@ -47,6 +47,8 @@
     
       <link rel="stylesheet" href="../assets/3rdparty/asciinema-player.css">
     
+      <link rel="stylesheet" href="../assets/styles.css">
+    
     
       
         
@@ -69,7 +71,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#ci-setup" class="md-skip">
+        <a href="#general-setup-for-ci-systems" class="md-skip">
           Skip to content
         </a>
       
@@ -97,7 +99,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              CI setup
+              General
             
           </span>
         </div>
@@ -351,17 +353,17 @@
       <input class="md-nav__toggle md-toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
     
     <label class="md-nav__link" for="nav-8">
-      Using batect with languages and developer tools
+      Working with languages and developer tools
       <span class="md-nav__icon md-icon">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
       </span>
     </label>
-    <nav class="md-nav" aria-label="Using batect with languages and developer tools" data-md-level="1">
+    <nav class="md-nav" aria-label="Working with languages and developer tools" data-md-level="1">
       <label class="md-nav__title" for="nav-8">
         <span class="md-nav__icon md-icon">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
         </span>
-        Using batect with languages and developer tools
+        Working with languages and developer tools
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -372,7 +374,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../tools/DotNetCore.html" title=".NET Core" class="md-nav__link">
+    <a href="DotNetCore.html" title=".NET Core" class="md-nav__link">
       .NET Core
     </a>
   </li>
@@ -384,7 +386,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../tools/Docker.html" title="Docker" class="md-nav__link">
+    <a href="Docker.html" title="Docker" class="md-nav__link">
       Docker
     </a>
   </li>
@@ -396,7 +398,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../tools/Golang.html" title="Golang" class="md-nav__link">
+    <a href="Golang.html" title="Golang" class="md-nav__link">
       Golang
     </a>
   </li>
@@ -408,7 +410,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../tools/Gradle.html" title="Gradle" class="md-nav__link">
+    <a href="Gradle.html" title="Gradle" class="md-nav__link">
       Gradle
     </a>
   </li>
@@ -420,7 +422,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../tools/Node.html" title="Node.js" class="md-nav__link">
+    <a href="Node.html" title="Node.js" class="md-nav__link">
       Node.js
     </a>
   </li>
@@ -432,7 +434,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../tools/Ruby.html" title="Ruby" class="md-nav__link">
+    <a href="Ruby.html" title="Ruby" class="md-nav__link">
       Ruby
     </a>
   </li>
@@ -444,86 +446,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../tools/Seq.html" title="Seq" class="md-nav__link">
+    <a href="Seq.html" title="Seq" class="md-nav__link">
       Seq
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9">
-    
-    <label class="md-nav__link" for="nav-9">
-      Using batect with CI systems
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
-      </span>
-    </label>
-    <nav class="md-nav" aria-label="Using batect with CI systems" data-md-level="1">
-      <label class="md-nav__title" for="nav-9">
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-        </span>
-        Using batect with CI systems
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../tools/Buildkite.html" title="Buildkite" class="md-nav__link">
-      Buildkite
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../tools/CircleCI.html" title="CircleCI" class="md-nav__link">
-      CircleCI
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../tools/GitHubActions.html" title="GitHub Actions" class="md-nav__link">
-      GitHub Actions
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../tools/TravisCI.html" title="Travis CI" class="md-nav__link">
-      Travis CI
     </a>
   </li>
 
@@ -542,7 +466,146 @@
 
   <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-10" type="checkbox" id="nav-10" checked>
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9" checked>
+    
+    <label class="md-nav__link" for="nav-9">
+      Working with CI systems
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Working with CI systems" data-md-level="1">
+      <label class="md-nav__title" for="nav-9">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Working with CI systems
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        General
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
+        </span>
+      </label>
+    
+    <a href="CIGeneral.html" title="General" class="md-nav__link md-nav__link--active">
+      General
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#requirements" class="md-nav__link">
+    Requirements
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#long-lived-agents" class="md-nav__link">
+    Long-lived agents
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="Buildkite.html" title="Buildkite" class="md-nav__link">
+      Buildkite
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="CircleCI.html" title="CircleCI" class="md-nav__link">
+      CircleCI
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="GitHubActions.html" title="GitHub Actions" class="md-nav__link">
+      GitHub Actions
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="TravisCI.html" title="Travis CI" class="md-nav__link">
+      Travis CI
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-10" type="checkbox" id="nav-10">
     
     <label class="md-nav__link" for="nav-10">
       Tips and tricks
@@ -564,30 +627,9 @@
           
           
 
-  
-
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-    <a href="CISetup.html" title="CI setup" class="md-nav__link md-nav__link--active">
-      CI setup
-    </a>
-    
-  </li>
-
-        
-          
-          
-          
-
 
   <li class="md-nav__item">
-    <a href="IDEIntegration.html" title="IDE integration" class="md-nav__link">
+    <a href="../tips/IDEIntegration.html" title="IDE integration" class="md-nav__link">
       IDE integration
     </a>
   </li>
@@ -599,7 +641,7 @@
 
 
   <li class="md-nav__item">
-    <a href="Performance.html" title="Performance" class="md-nav__link">
+    <a href="../tips/Performance.html" title="Performance" class="md-nav__link">
       Performance
     </a>
   </li>
@@ -611,7 +653,7 @@
 
 
   <li class="md-nav__item">
-    <a href="BuildArtifactsOwnedByRoot.html" title="Build artifacts are owned by root" class="md-nav__link">
+    <a href="../tips/BuildArtifactsOwnedByRoot.html" title="Build artifacts are owned by root" class="md-nav__link">
       Build artifacts are owned by root
     </a>
   </li>
@@ -623,7 +665,7 @@
 
 
   <li class="md-nav__item">
-    <a href="WaitingForDependenciesToBeReady.html" title="Waiting for dependencies to be ready" class="md-nav__link">
+    <a href="../tips/WaitingForDependenciesToBeReady.html" title="Waiting for dependencies to be ready" class="md-nav__link">
       Waiting for dependencies to be ready
     </a>
   </li>
@@ -635,7 +677,7 @@
 
 
   <li class="md-nav__item">
-    <a href="Proxies.html" title="Proxies" class="md-nav__link">
+    <a href="../tips/Proxies.html" title="Proxies" class="md-nav__link">
       Proxies
     </a>
   </li>
@@ -647,7 +689,7 @@
 
 
   <li class="md-nav__item">
-    <a href="Windows.html" title="Windows" class="md-nav__link">
+    <a href="../tips/Windows.html" title="Windows" class="md-nav__link">
       Windows
     </a>
   </li>
@@ -711,6 +753,30 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#requirements" class="md-nav__link">
+    Requirements
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#long-lived-agents" class="md-nav__link">
+    Long-lived agents
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -721,7 +787,7 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/batect/batect/edit/master/docs/content/tips/CISetup.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/batect/batect/edit/master/docs/content/tools/CIGeneral.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
@@ -729,18 +795,22 @@
                   
                 
                 
-                <h1 id="ci-setup">CI setup<a class="headerlink" href="#ci-setup" title="Permanent link">&para;</a></h1>
+                <h1 id="general-setup-for-ci-systems">General setup for CI systems<a class="headerlink" href="#general-setup-for-ci-systems" title="Permanent link">&para;</a></h1>
+<h2 id="requirements">Requirements<a class="headerlink" href="#requirements" title="Permanent link">&para;</a></h2>
+<p>batect can be used with any CI system that can execute arbitrary commands.</p>
+<p>CI agents must meet batect's normal <a href="../index.html#what-are-batects-system-requirements">requirements</a>.</p>
+<h2 id="long-lived-agents">Long-lived agents<a class="headerlink" href="#long-lived-agents" title="Permanent link">&para;</a></h2>
 <div class="admonition tip">
 <p class="admonition-title">tl;dr</p>
-<p>Set up a Cron job to run <code>docker image prune -f</code> regularly on CI agents</p>
+<p>Set up a Cron job to run <code>docker image prune -f</code> regularly on long-lived CI agents</p>
 </div>
-<p>If you are using Dockerfiles to define your containers (as opposed to taking a pre-existing image), this can generate a
+<p>If you are using Dockerfiles to define your containers (as opposed to using a pre-existing image), this can generate a
 large number of orphaned images (and their associated image layers) over time. While batect goes to great lengths to
 ensure that containers and networks are cleaned up after every task run, it can't know which images are unused and so
 it can't safely automatically remove unused images.</p>
 <p>These orphaned images take up disk space, and, if left unattended, can lead to exhausting all the available disk space.
-This is especially a problem on CI, where a human might not notice this issue until the disk is full.</p>
-<p>Therefore, it's recommended that CI servers running batect-based builds have a regular task that removes orphaned images.
+This is especially a problem on CI agents, where a human might not notice this issue until the disk is full.</p>
+<p>Therefore, it's recommended that CI agents running batect-based builds have a regular task that removes orphaned images.
 Docker has a built-in command to do this: <code>docker image prune -f</code> (the <code>-f</code> disables the confirmation prompt). The exact
 frequency will depend on your usage pattern, but once a day is usually more than sufficient.</p>
                 
@@ -761,7 +831,7 @@ frequency will depend on your usage pattern, but once a day is usually more than
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../tools/TravisCI.html" title="Travis CI" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="Seq.html" title="Seq" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -770,19 +840,19 @@ frequency will depend on your usage pattern, but once a day is usually more than
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Travis CI
+                Seq
               </div>
             </div>
           </a>
         
         
-          <a href="IDEIntegration.html" title="IDE integration" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="Buildkite.html" title="Buildkite" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                IDE integration
+                Buildkite
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">
