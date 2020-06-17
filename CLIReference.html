@@ -402,6 +402,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#use-an-existing-network-for-tasks-use-network" class="md-nav__link">
+    Use an existing network for tasks (--use-network)
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -981,6 +988,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#use-an-existing-network-for-tasks-use-network" class="md-nav__link">
+    Use an existing network for tasks (--use-network)
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1211,6 +1225,13 @@ However, sometimes it can be useful to leave all the created containers running 
 Use this option to disable this behaviour.</p>
 <p>Example:</p>
 <div class="highlight"><pre><span></span><code>./batect --no-proxy-vars the-task
+</code></pre></div>
+
+<h3 id="use-an-existing-network-for-tasks-use-network">Use an existing network for tasks <small>(<code>--use-network</code>)</small><a class="headerlink" href="#use-an-existing-network-for-tasks-use-network" title="Permanent link">&para;</a></h3>
+<p>By default, batect will create a new Docker network for each task, as described in <a href="TaskLifecycle.html">the task lifecycle</a>.
+Use this option to provide an existing network to use for all tasks.</p>
+<p>Example:</p>
+<div class="highlight"><pre><span></span><code>./batect --use-network<span class="o">=</span>my-existing-network the-task
 </code></pre></div>
 
 <h2 id="see-a-list-of-available-tasks-list-tasks-or-t">See a list of available tasks <small>(<code>--list-tasks</code> or <code>-T</code>)</small><a class="headerlink" href="#see-a-list-of-available-tasks-list-tasks-or-t" title="Permanent link">&para;</a></h2>
