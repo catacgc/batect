@@ -1344,6 +1344,7 @@ believe your console supports coloured output, or your console may incorrectly r
 <h3 id="disable-update-notification-no-update-notification">Disable update notification <small>(<code>--no-update-notification</code>)</small><a class="headerlink" href="#disable-update-notification-no-update-notification" title="Permanent link">&para;</a></h3>
 <p>batect automatically checks for updates at most once every 24 hours and displays a notification if a newer version is available.</p>
 <p>Passing this flag will disable both the update check and notification.</p>
+<p>This flag is automatically enabled if <a href="#force-a-particular-output-style-output-or-o"><code>--output</code></a> is set to <code>quiet</code>.</p>
 <h3 id="disable-wrapper-cache-cleanup-no-wrapper-cache-cleanup">Disable wrapper cache cleanup <small>(<code>--no-wrapper-cache-cleanup</code>)</small><a class="headerlink" href="#disable-wrapper-cache-cleanup-no-wrapper-cache-cleanup" title="Permanent link">&para;</a></h3>
 <p>batect automatically removes old versions of itself that have been downloaded and cached locally if they haven't been used in 30 days.</p>
 <p>Passing this flag will disable this cleanup process. You can manually remove these files from <code>~/.batect/cache</code> yourself at any time.</p>
@@ -1423,6 +1424,7 @@ believe your console supports coloured output, or your console may incorrectly r
 <div class="highlight"><pre><span></span><code>./batect --output simple the-task
 </code></pre></div>
 
+<p>Passing <code>--output=quiet</code> implies <a href="#disable-update-notification-no-update-notification"><code>--no-update-notification</code></a>.</p>
 <h2 id="general-notes">General notes<a class="headerlink" href="#general-notes" title="Permanent link">&para;</a></h2>
 <ul>
 <li>All command line options that take a value can be provided in <code>--option=value</code> or <code>--option value</code> format.</li>

@@ -830,12 +830,11 @@
 <h2 id="caching-dependencies">Caching dependencies<a class="headerlink" href="#caching-dependencies" title="Permanent link">&para;</a></h2>
 <div class="admonition tip">
 <p class="admonition-title">tl;dr</p>
-<p>Mount a cache as the <code>~/.gradle</code> directory within the container, otherwise you'll have to download your dependencies every time the build
-runs</p>
+<p>Mount a cache as the <code>~/.gradle</code> directory within the container, otherwise you'll have to download your dependencies every time the build runs</p>
 </div>
-<p>By default, Gradle downloads all of your application's dependencies to the <code>~/.gradle</code> directory. However, because batect destroys all of your containers once
-the task finishes, this directory is lost at the end of every task run - which means that Gradle will have to download all of your dependencies again,
-significantly slowing down the build.</p>
+<p>By default, Gradle downloads all of your application's dependencies to the <a href="https://docs.gradle.org/current/userguide/directory_layout.html#dir:gradle_user_home"><code>~/.gradle</code> directory</a>.
+However, because batect destroys all of your containers once the task finishes, this directory is lost at the end of every task run - which means that Gradle
+will have to download all of your dependencies again, significantly slowing down the build.</p>
 <p>The solution to this is to mount a <a href="../tips/Performance.html#cache-volumes">cache</a> that persists between builds into the container at <code>~/.gradle</code>, so that these
 downloaded dependencies are persisted between builds.</p>
 <p>Note that you can't use <code>~</code> in the container path for a volume mount:</p>
