@@ -1,0 +1,1592 @@
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentation for batect, the build and testing environments as code tool">
+      
+      
+        <link rel="canonical" href="https://batect.dev/Privacy.html">
+      
+      
+        <meta name="author" content="Charles Korn">
+      
+      <link rel="shortcut icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.1">
+    
+    
+      
+        <title>Privacy - batect documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.5d00201e.min.css">
+      
+        <link rel="stylesheet" href="assets/stylesheets/palette.816e8abc.min.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#2196f3">
+      
+    
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="assets/3rdparty/asciinema-player.css">
+    
+      <link rel="stylesheet" href="assets/styles.css">
+    
+    
+      
+        
+<script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-63947227-2","auto"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}),document.addEventListener("DOMContentSwitch",function(){ga("send","pageview",document.location.pathname)})</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="blue" data-md-color-accent="light-blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#privacy-policy" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="https://batect.dev" title="batect documentation" class="md-header-nav__button md-logo" aria-label="batect documentation">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            batect documentation
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Privacy
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header-nav__source">
+        
+<a href="https://github.com/batect/batect/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    batect/batect
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://batect.dev" title="batect documentation" class="md-nav__button md-logo" aria-label="batect documentation">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    batect documentation
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/batect/batect/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    batect/batect
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="index.html" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="Setup.html" title="Setup" class="md-nav__link">
+      Setup
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="GettingStarted.html" title="Getting started tutorial" class="md-nav__link">
+      Getting started tutorial
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="Comparison.html" title="Comparison with other tools" class="md-nav__link">
+      Comparison with other tools
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      Configuration file reference
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Configuration file reference" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Configuration file reference
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="config/Overview.html" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="config/ConfigVariables.html" title="Config Variables" class="md-nav__link">
+      Config Variables
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="config/Containers.html" title="Containers" class="md-nav__link">
+      Containers
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="config/Includes.html" title="Includes" class="md-nav__link">
+      Includes
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="config/Tasks.html" title="Tasks" class="md-nav__link">
+      Tasks
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="config/Expressions.html" title="Expressions" class="md-nav__link">
+      Expressions
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="CLIReference.html" title="CLI reference" class="md-nav__link">
+      CLI reference
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="TaskLifecycle.html" title="Task lifecycle" class="md-nav__link">
+      Task lifecycle
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
+    
+    <label class="md-nav__link" for="nav-8">
+      Working with languages and developer tools
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Working with languages and developer tools" data-md-level="1">
+      <label class="md-nav__title" for="nav-8">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Working with languages and developer tools
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="tools/DotNetCore.html" title=".NET Core" class="md-nav__link">
+      .NET Core
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="tools/Docker.html" title="Docker" class="md-nav__link">
+      Docker
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="tools/Golang.html" title="Golang" class="md-nav__link">
+      Golang
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="tools/Gradle.html" title="Gradle" class="md-nav__link">
+      Gradle
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="tools/Node.html" title="Node.js" class="md-nav__link">
+      Node.js
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="tools/Ruby.html" title="Ruby" class="md-nav__link">
+      Ruby
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="tools/Seq.html" title="Seq" class="md-nav__link">
+      Seq
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9">
+    
+    <label class="md-nav__link" for="nav-9">
+      Working with CI systems
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Working with CI systems" data-md-level="1">
+      <label class="md-nav__title" for="nav-9">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Working with CI systems
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="tools/CIGeneral.html" title="General" class="md-nav__link">
+      General
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="tools/Buildkite.html" title="Buildkite" class="md-nav__link">
+      Buildkite
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="tools/CircleCI.html" title="CircleCI" class="md-nav__link">
+      CircleCI
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="tools/GitHubActions.html" title="GitHub Actions" class="md-nav__link">
+      GitHub Actions
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="tools/TravisCI.html" title="Travis CI" class="md-nav__link">
+      Travis CI
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-10" type="checkbox" id="nav-10">
+    
+    <label class="md-nav__link" for="nav-10">
+      Tips and tricks
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Tips and tricks" data-md-level="1">
+      <label class="md-nav__title" for="nav-10">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Tips and tricks
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="tips/IDEIntegration.html" title="IDE integration" class="md-nav__link">
+      IDE integration
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="tips/Performance.html" title="Performance" class="md-nav__link">
+      Performance
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="tips/BuildArtifactsOwnedByRoot.html" title="Build artifacts are owned by root" class="md-nav__link">
+      Build artifacts are owned by root
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="tips/WaitingForDependenciesToBeReady.html" title="Waiting for dependencies to be ready" class="md-nav__link">
+      Waiting for dependencies to be ready
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="tips/Proxies.html" title="Proxies" class="md-nav__link">
+      Proxies
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="tips/Windows.html" title="Windows" class="md-nav__link">
+      Windows
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="Bundles.html" title="Bundles" class="md-nav__link">
+      Bundles
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="SampleProjects.html" title="Sample projects" class="md-nav__link">
+      Sample projects
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="https://github.com/batect/batect/releases" title="Release notes" class="md-nav__link">
+      Release notes
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="https://github.com/batect/batect/blob/master/ROADMAP.md" title="Roadmap" class="md-nav__link">
+      Roadmap
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Privacy
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
+        </span>
+      </label>
+    
+    <a href="Privacy.html" title="Privacy" class="md-nav__link md-nav__link--active">
+      Privacy
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#general-principles" class="md-nav__link">
+    General principles
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#documentation-site-statistical-information" class="md-nav__link">
+    Documentation site statistical information
+  </a>
+  
+    <nav class="md-nav" aria-label="Documentation site statistical information">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-data-is-collected" class="md-nav__link">
+    What data is collected
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-and-why-the-data-is-used" class="md-nav__link">
+    How and why the data is used
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-to-opt-out" class="md-nav__link">
+    How to opt-out
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-to-request-for-your-data-to-be-deleted" class="md-nav__link">
+    How to request for your data to be deleted
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#documentation-site-hosting" class="md-nav__link">
+    Documentation site hosting
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#in-app-update-notifications" class="md-nav__link">
+    In-app update notifications
+  </a>
+  
+    <nav class="md-nav" aria-label="In-app update notifications">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-data-is-collected-and-how-it-is-used" class="md-nav__link">
+    What data is collected and how it is used
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-to-opt-out_1" class="md-nav__link">
+    How to opt-out
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#in-app-telemetry" class="md-nav__link">
+    In-app telemetry
+  </a>
+  
+    <nav class="md-nav" aria-label="In-app telemetry">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-data-is-collected-and-why" class="md-nav__link">
+    What data is collected and why
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-data-is-not-collected" class="md-nav__link">
+    What data is not collected
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-data-is-used" class="md-nav__link">
+    How data is used
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-data-is-collected-and-stored" class="md-nav__link">
+    How data is collected and stored
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#who-has-access-to-the-data" class="md-nav__link">
+    Who has access to the data
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-to-opt-out_2" class="md-nav__link">
+    How to opt-out
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-to-request-for-your-data-to-be-deleted_1" class="md-nav__link">
+    How to request for your data to be deleted
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#third-party-services" class="md-nav__link">
+    Third-party services
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#general-principles" class="md-nav__link">
+    General principles
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#documentation-site-statistical-information" class="md-nav__link">
+    Documentation site statistical information
+  </a>
+  
+    <nav class="md-nav" aria-label="Documentation site statistical information">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-data-is-collected" class="md-nav__link">
+    What data is collected
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-and-why-the-data-is-used" class="md-nav__link">
+    How and why the data is used
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-to-opt-out" class="md-nav__link">
+    How to opt-out
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-to-request-for-your-data-to-be-deleted" class="md-nav__link">
+    How to request for your data to be deleted
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#documentation-site-hosting" class="md-nav__link">
+    Documentation site hosting
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#in-app-update-notifications" class="md-nav__link">
+    In-app update notifications
+  </a>
+  
+    <nav class="md-nav" aria-label="In-app update notifications">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-data-is-collected-and-how-it-is-used" class="md-nav__link">
+    What data is collected and how it is used
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-to-opt-out_1" class="md-nav__link">
+    How to opt-out
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#in-app-telemetry" class="md-nav__link">
+    In-app telemetry
+  </a>
+  
+    <nav class="md-nav" aria-label="In-app telemetry">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-data-is-collected-and-why" class="md-nav__link">
+    What data is collected and why
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-data-is-not-collected" class="md-nav__link">
+    What data is not collected
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-data-is-used" class="md-nav__link">
+    How data is used
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-data-is-collected-and-stored" class="md-nav__link">
+    How data is collected and stored
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#who-has-access-to-the-data" class="md-nav__link">
+    Who has access to the data
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-to-opt-out_2" class="md-nav__link">
+    How to opt-out
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-to-request-for-your-data-to-be-deleted_1" class="md-nav__link">
+    How to request for your data to be deleted
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#third-party-services" class="md-nav__link">
+    Third-party services
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/batect/batect/edit/master/docs/content/Privacy.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                  
+                
+                
+                <h1 id="privacy-policy">Privacy policy<a class="headerlink" href="#privacy-policy" title="Permanent link">&para;</a></h1>
+<p>This privacy policy details the data that is collected when you interact with batect and its related services.</p>
+<h2 id="general-principles">General principles<a class="headerlink" href="#general-principles" title="Permanent link">&para;</a></h2>
+<p>As an open source project, the batect project does not have the resources to run detailed user studies to understand best how to design features or
+prioritise work, and instead relies on community feedback and data. We collect data only for the purpose of understanding how batect and its related
+services are used, maintaining batect and its related services, monitoring the security and performance of its related services, and improving batect
+and its related services.</p>
+<p>Data is not:</p>
+<ul>
+<li>used for advertising purposes</li>
+<li>sold</li>
+<li>shared with others, except in aggregate, anonymous form (eg. the total number of users that used batect over a 7 day period)</li>
+</ul>
+<h2 id="documentation-site-statistical-information">Documentation site statistical information<a class="headerlink" href="#documentation-site-statistical-information" title="Permanent link">&para;</a></h2>
+<p>This documentation site (<a href="https://batect.dev">batect.dev</a>) collects anonymous statistical information using Google Analytics.</p>
+<h3 id="what-data-is-collected">What data is collected<a class="headerlink" href="#what-data-is-collected" title="Permanent link">&para;</a></h3>
+<p>Google Analytics collects information such as the following:</p>
+<ul>
+<li>the number of unique users that visit the site</li>
+<li>how often a user returns to the site</li>
+<li>the referrer (eg. if you clicked on a link on a Google search result page, the search term, or if you clicked on a link on a blog post, the URL of the blog post)</li>
+<li>the amount of time spent on each page</li>
+<li>the flow of pages a user visits in a single session (eg. 50% of users that view the home page go to the CLI reference page next)</li>
+<li>the general geographic location (country or city) of the user based on IP address</li>
+<li>the browser-reported language preference</li>
+<li>the type of device being used (eg. phone or computer)</li>
+<li>technical information such as the browser version and operating system version</li>
+<li>performance information such as page load times</li>
+</ul>
+<p>Google Analytics expressly <a href="https://support.google.com/analytics/answer/6366371?hl=en-GB&amp;utm_id=ad">forbids</a> collecting
+personally identifiable information. Data is always collected over HTTPS.</p>
+<p>The following Google Analytics features are <em>not</em> enabled:</p>
+<ul>
+<li><a href="https://support.google.com/analytics/answer/2611268?hl=en-GB&amp;utm_id=ad">Remarketing</a></li>
+<li><a href="https://support.google.com/analytics/answer/3450482?hl=en-GB&amp;utm_id=ad">Advertising Features</a>, which includes information such as age, gender
+  and interests</li>
+<li><a href="https://support.google.com/analytics/answer/3123662?hl=en-GB&amp;utm_id=ad">User-ID</a>, which tracks users across devices</li>
+<li><a href="https://support.google.com/analytics/answer/7532985?hl=en-GB&amp;utm_id=ad">Google Signals</a>, which provides similar features to the above features</li>
+</ul>
+<h3 id="how-and-why-the-data-is-used">How and why the data is used<a class="headerlink" href="#how-and-why-the-data-is-used" title="Permanent link">&para;</a></h3>
+<p>This data is used to understand how users use the documentation, identify areas for improvement, identify technical issues and
+measure the impact of changes to the documentation.</p>
+<p>Data collected from Google Analytics is not combined with data from other sources to attempt to identify users.</p>
+<p>Only the primary maintainer of batect, <a href="https://github.com/charleskorn">Charles Korn</a> has access to the Google Analytics console for this site.</p>
+<h3 id="how-to-opt-out">How to opt-out<a class="headerlink" href="#how-to-opt-out" title="Permanent link">&para;</a></h3>
+<p>Google provides a <a href="https://tools.google.com/dlpage/gaoptout">browser add-on</a> that blocks Google Analytics on all sites.</p>
+<p>There are also a number of third-party add-ons that can block Google Analytics on a per-site basis.</p>
+<h3 id="how-to-request-for-your-data-to-be-deleted">How to request for your data to be deleted<a class="headerlink" href="#how-to-request-for-your-data-to-be-deleted" title="Permanent link">&para;</a></h3>
+<p>Send a request to <a href="mailto:privacy@batect.dev">privacy@batect.dev</a>. Your data will be deleted using the Google Analytics
+<a href="https://developers.google.com/analytics/devguides/config/userdeletion/v3">User Deletion API</a> within 14 days.</p>
+<h2 id="documentation-site-hosting">Documentation site hosting<a class="headerlink" href="#documentation-site-hosting" title="Permanent link">&para;</a></h2>
+<p>This documentation site (<a href="https://batect.dev">batect.dev</a>) is hosted using GitHub Pages and Cloudflare. Both of these services collect data
+to enable them to operate their services, and their respective privacy policies apply to this data.</p>
+<h2 id="in-app-update-notifications">In-app update notifications<a class="headerlink" href="#in-app-update-notifications" title="Permanent link">&para;</a></h2>
+<p>batect checks for updated versions and displays a reminder to the user if a newer version is available.</p>
+<p>It uses the public, unauthenticated GitHub API to check for new versions. It checks for updates at most once every 36 hours.</p>
+<p>Running <code>./batect --upgrade</code> uses the same API in the same way to deliver new versions of batect.</p>
+<h3 id="what-data-is-collected-and-how-it-is-used">What data is collected and how it is used<a class="headerlink" href="#what-data-is-collected-and-how-it-is-used" title="Permanent link">&para;</a></h3>
+<p>No personally identifiable information or credentials are sent to GitHub as part of this process, and <a href="https://github.com/site/privacy">GitHub's privacy policy</a>
+applies to any data it collects.</p>
+<p>The GitHub API requires encrypted HTTPS connections.</p>
+<h3 id="how-to-opt-out_1">How to opt-out<a class="headerlink" href="#how-to-opt-out_1" title="Permanent link">&para;</a></h3>
+<p>Run batect with <code>--no-update-notification</code> to disable checking for new versions.</p>
+<p>Note that running <code>./batect --upgrade</code> ignores <code>--no-update-notification</code> if it is set, and will always use the GitHub API to check for a new version.</p>
+<h2 id="in-app-telemetry">In-app telemetry<a class="headerlink" href="#in-app-telemetry" title="Permanent link">&para;</a></h2>
+<p>batect can collect anonymous environment, usage and performance information as it runs.</p>
+<p>This information does not include personal or sensitive information such as the names of projects or tasks.</p>
+<h3 id="what-data-is-collected-and-why">What data is collected and why<a class="headerlink" href="#what-data-is-collected-and-why" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Example</th>
+<th>Rationale for collection</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Environmental information</strong></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>batect version</td>
+<td><code>0.51.0</code></td>
+<td>Helps correlate and compare results for different versions of batect</td>
+</tr>
+<tr>
+<td>OS and version</td>
+<td><code>Mac OS X 10.15.4 (x86_64)</code></td>
+<td>Helps correlate and compare results for different operating systems and OS versions and helps plan compatibility changes for different operating systems (eg. dropping support for an older version of an operating system no longer commonly used)</td>
+</tr>
+<tr>
+<td>Docker version</td>
+<td><code>19.03.8</code></td>
+<td>Helps correlate and compare results for different versions of Docker and helps plan compatibility changes for different versions of Docker (eg. dropping support for an older version of Docker no longer commonly used)</td>
+</tr>
+<tr>
+<td>JVM version</td>
+<td><code>Oracle Corporation Java HotSpot(TM) 64-Bit Server VM 1.8.0_162</code></td>
+<td>Helps correlate and compare results for different JVMs and helps plan compatibility changes for different JVMs (eg. dropping support for an older version of Java no longer commonly used)</td>
+</tr>
+<tr>
+<td>Git version</td>
+<td><code>2.27.0</code></td>
+<td>Helps correlate and compare results for different versions of Git and helps plan compatibility changes for different versions of Git (eg. dropping support for an older version of Git no longer commonly used)</td>
+</tr>
+<tr>
+<td>Shell (value of the <code>SHELL</code> environment variable)</td>
+<td><code>bash</code> or <code>fish</code></td>
+<td>Helps plan and prioritise possible future features (eg. shell tab completion)</td>
+</tr>
+<tr>
+<td>Terminal type (value of the <code>TERM</code> environment variable)</td>
+<td><code>xterm-256color</code></td>
+<td>Helps plan and prioritise possible future features (eg. CLI output options)</td>
+</tr>
+<tr>
+<td>Whether stdin and stdout are connected to a TTY</td>
+<td></td>
+<td>Helps plan and prioritise possible future features (eg. CLI output options)</td>
+</tr>
+<tr>
+<td>Whether batect believes interactivity (eg. updating text) is supported by the console</td>
+<td></td>
+<td>Helps plan and prioritise possible future features (eg. CLI output options)</td>
+</tr>
+<tr>
+<td>Whether batect believes it is running on a CI tool, and the name of the CI tool</td>
+<td><code>GitHub Actions</code>, <code>CircleCI</code> or <code>Jenkins</code></td>
+<td>Helps correlate and compare results for different CI tools, helps plan documentation improvements (eg. adding documentation for commonly used CI tools not yet covered in the documentation), helps plan and prioritise possible future features (eg. closer integration with CI tools)</td>
+</tr>
+<tr>
+<td>Whether the wrapper script downloaded the current version of batect for this invocation</td>
+<td></td>
+<td>Helps compare telemetry data with download statistics to determine roughly what proportion of users enable telemetry</td>
+</tr>
+<tr>
+<td>A unique, autogenerated user ID used to correlate information across invocations (a <a href="https://en.wikipedia.org/wiki/Universally_unique_identifier#Version_4_(random)">version 4 randomly-generated UUID</a>)</td>
+<td><code>00001111-2222-3333-4444-555566667777</code></td>
+<td>Helps correlate results across invocations (eg. how often users batect, how quickly users upgrade from one version to another) and helps calculate usage statistics (eg. weekly active users)</td>
+</tr>
+<tr>
+<td>A unique, autogenerated session ID (a <a href="https://en.wikipedia.org/wiki/Universally_unique_identifier#Version_4_(random)">version 4 randomly-generated UUID</a>)</td>
+<td><code>00001111-2222-3333-4444-555566667777</code></td>
+<td>Allows easy identification and deduplication of uploaded data</td>
+</tr>
+<tr>
+<td>Time taken to upload telemetry information in the background</td>
+<td>0.2 seconds</td>
+<td>Helps understand the impact of telemetry collection</td>
+</tr>
+<tr>
+<td><strong>Usage information</strong></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Command</td>
+<td>running a task, upgrading batect, displaying help</td>
+<td>Helps segment data (eg. determining average command duration for <code>--upgrade</code>) and understand usage behaviour (eg. how often <code>--help</code> is used)</td>
+</tr>
+<tr>
+<td>Exit code</td>
+<td><code>0</code></td>
+<td>Helps understand whether the invocation succeeded or not</td>
+</tr>
+<tr>
+<td>Time the command started in UTC</td>
+<td><code>2020-08-10T16:54:00.123Z</code></td>
+<td>Provides an ordering of invocations, helps determine average time between invocations, and together with other timing values, helps understand the performance of batect</td>
+</tr>
+<tr>
+<td>Time the JVM started in UTC</td>
+<td><code>2020-08-10T16:54:00.102Z</code></td>
+<td>Provides an ordering of invocations, helps determine average time between invocations, and together with other timing values, helps understand the performance of batect</td>
+</tr>
+<tr>
+<td>Time the command finished in UTC</td>
+<td><code>2020-08-10T16:54:03.423Z</code></td>
+<td>Provides an ordering of invocations, helps determine average time between invocations, and together with other timing values, helps understand the performance of batect</td>
+</tr>
+<tr>
+<td>Output mode used</td>
+<td><code>simple</code>, <code>fancy</code>, <code>quiet</code> or <code>all</code></td>
+<td>Helps understand usage behaviour and helps plan and prioritise possible future features</td>
+</tr>
+<tr>
+<td>Whether <code>--no-color</code> is enabled</td>
+<td></td>
+<td>Helps understand usage behaviour and helps plan and prioritise possible future features</td>
+</tr>
+<tr>
+<td>Docker connection type</td>
+<td>Unix socket, Windows named pipe or TCP</td>
+<td>Helps understand usage behaviour and helps plan and prioritise possible future features</td>
+</tr>
+<tr>
+<td>Whether <code>--docker-tls</code> or <code>--docker-tls-verify</code> is set</td>
+<td></td>
+<td>Helps understand usage behaviour and helps plan and prioritise possible future features</td>
+</tr>
+<tr>
+<td>Whether a custom configuration file name (ie. not <code>batect.yml</code>) is being used</td>
+<td><code>false</code></td>
+<td>Helps understand usage behaviour and helps plan and prioritise possible future features</td>
+</tr>
+<tr>
+<td>Whether a config variables file is being used</td>
+<td><code>true</code></td>
+<td>Helps understand usage behaviour and helps plan and prioritise possible future features</td>
+</tr>
+<tr>
+<td>Whether the following features have been disabled: update notifications, wrapper cache cleanup, cleanup after success, cleanup after failure, proxy environment variable propagation</td>
+<td></td>
+<td>Helps understand usage behaviour and helps plan and prioritise possible future features</td>
+</tr>
+<tr>
+<td>Whether a 'new batect version available' notification is shown</td>
+<td></td>
+<td>Helps understand usage behaviour and helps plan and prioritise possible future features (eg. tools to help upgrade batect automatically)</td>
+</tr>
+<tr>
+<td><strong>Task run information</strong></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Type of container being run</td>
+<td>Windows or Linux</td>
+<td>Helps understand usage behaviour and helps plan and prioritise possible future features</td>
+</tr>
+<tr>
+<td>Type of cache being used</td>
+<td>volume or directory</td>
+<td>Helps understand usage behaviour and helps plan and prioritise possible future features</td>
+</tr>
+<tr>
+<td>Total number of tasks in the project</td>
+<td>10</td>
+<td>Helps understand usage behaviour and helps plan and prioritise possible future features (eg. performance improvements for very large projects)</td>
+</tr>
+<tr>
+<td>Total number of containers in the project</td>
+<td>4</td>
+<td>Helps understand usage behaviour and helps plan and prioritise possible future features (eg. performance improvements for very large projects)</td>
+</tr>
+<tr>
+<td>Total number of configuration variables in the project</td>
+<td>6</td>
+<td>Helps understand usage behaviour and helps plan and prioritise possible future features (eg. performance improvements for very large projects)</td>
+</tr>
+<tr>
+<td>Total number of prerequisite tasks required to execute before executing the main task</td>
+<td>2</td>
+<td>Helps understand usage behaviour and helps plan and prioritise possible future features (eg. performance improvements for very large projects)</td>
+</tr>
+<tr>
+<td>Number of config variable overrides specified on the command line</td>
+<td>0</td>
+<td>Helps understand usage behaviour and helps plan and prioritise possible future features</td>
+</tr>
+<tr>
+<td>Number of image overrides specified on the command line</td>
+<td>1</td>
+<td>Helps understand usage behaviour and helps plan and prioritise possible future features</td>
+</tr>
+<tr>
+<td>Whether an existing Docker network was specified on the command line</td>
+<td><code>false</code></td>
+<td>Helps understand usage behaviour and helps plan and prioritise possible future features</td>
+</tr>
+<tr>
+<td>Whether prerequisites were skipped on the command line</td>
+<td><code>false</code></td>
+<td>Helps understand usage behaviour and helps plan and prioritise possible future features</td>
+</tr>
+<tr>
+<td>Number of additional arguments passed on the command line to the task</td>
+<td>2</td>
+<td>Helps understand usage behaviour and helps plan and prioritise possible future features</td>
+</tr>
+<tr>
+<td>Number of containers started for each task</td>
+<td>3</td>
+<td>Helps understand usage behaviour and helps plan and prioritise possible future features (eg. performance improvements for very large projects)</td>
+</tr>
+<tr>
+<td>Time taken to load the configuration for the project</td>
+<td>0.05 seconds</td>
+<td>Helps understand usage and application behaviour and helps plan and prioritise possible future features (eg. performance improvements for very large projects)</td>
+</tr>
+<tr>
+<td>Time taken to execute each task</td>
+<td>3.3 seconds</td>
+<td>Helps understand usage and application behaviour and helps plan and prioritise possible future features (eg. performance improvements for very large projects)</td>
+</tr>
+<tr>
+<td>Time taken to execute each step in each task (eg. pulling or building a image, creating a container, stopping a container, removing a container)</td>
+<td>0.4 seconds</td>
+<td>Helps understand usage and application behaviour and helps plan and prioritise possible future features (eg. performance improvements for certain steps)</td>
+</tr>
+<tr>
+<td><strong>Exception information</strong></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Type of exception</td>
+<td><code>IOException</code> or <code>ContainerCreationFailedException</code></td>
+<td>Helps understand possible bugs, helps understand the frequency with which users see certain classes of errors and hepls plan and prioritise possible future features (eg. recovering from errors automatically or suggesting recovery actions to the user)</td>
+</tr>
+<tr>
+<td>Stack trace</td>
+<td></td>
+<td>Helps understand possible bugs, helps understand the frequency with which users see certain classes of errors and hepls plan and prioritise possible future features (eg. recovering from errors automatically or suggesting recovery actions to the user)</td>
+</tr>
+<tr>
+<td>Whether the exception was user-facing or not (eg. occurred in a cache cleanup background task)</td>
+<td><code>false</code></td>
+<td>Helps understand possible bugs, helps understand the frequency with which users see certain classes of errors and hepls plan and prioritise possible future features (eg. recovering from errors automatically or suggesting recovery actions to the user)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="what-data-is-not-collected">What data is not collected<a class="headerlink" href="#what-data-is-not-collected" title="Permanent link">&para;</a></h3>
+<p>As a rule, any personally-identifiable or potentially sensitive information is not collected, including:</p>
+<ul>
+<li>personally-identifiable information, such as user names or email addresses</li>
+<li>IP addresses (IP addresses may be captured in request logs, but IP addresses are not associated with uploaded data)</li>
+<li>names of projects, containers, tasks or config variables</li>
+<li>environment variable names or values, with the exception of <code>TERM</code> and <code>SHELL</code></li>
+<li>names of Docker images used</li>
+<li>names of files</li>
+<li>any part of task command lines</li>
+<li>exception messages, as these cannot be guaranteed to contain only non-sensitive information</li>
+<li>timezone information (all timestamps collected are normalised to UTC before upload)</li>
+</ul>
+<h3 id="how-data-is-used">How data is used<a class="headerlink" href="#how-data-is-used" title="Permanent link">&para;</a></h3>
+<p>Data is used in accordance with the <a href="#general-principles">general principles above</a> - to understand how batect is used, to maintain batect, to monitor its
+performance and reliability, and improve it.</p>
+<h3 id="how-data-is-collected-and-stored">How data is collected and stored<a class="headerlink" href="#how-data-is-collected-and-stored" title="Permanent link">&para;</a></h3>
+<p>Data is collected as the application runs, and then uploaded to a secure, private GCP account dedicated to storing and processing this information.</p>
+<p>All data is transferred over HTTPS, and encrypted at rest. A variety of controls are in place to ensure that raw data is not disclosed publicly.</p>
+<h3 id="who-has-access-to-the-data">Who has access to the data<a class="headerlink" href="#who-has-access-to-the-data" title="Permanent link">&para;</a></h3>
+<p>Only the primary maintainer of batect, <a href="https://github.com/charleskorn">Charles Korn</a> has access to this data once it is uploaded.</p>
+<p>Aggregated, anonymous information (eg. the total number of users that used batect over a 7 day period) may be shared with others.</p>
+<h3 id="how-to-opt-out_2">How to opt-out<a class="headerlink" href="#how-to-opt-out_2" title="Permanent link">&para;</a></h3>
+<p>When batect starts for the first time, it prompts for permission to collect this information:</p>
+<div class="highlight"><pre><span></span><code>batect can collect anonymous environment, usage and performance information.
+This information does not include personal or sensitive information, and is used only to help improve batect.
+More information is available at https://batect.dev/Privacy.html, including details of what information is collected and a formal privacy policy.
+
+Is it OK for batect to collect this information? (Y/n)
+</code></pre></div>
+
+<p>To opt-out, respond with <code>no</code>.</p>
+<p>To opt-out after this initial run, do any of the following:</p>
+<ul>
+<li>
+<p>Run <a href="CLIReference.html#disable-telemetry-permanently-permanently-disable-telemetry"><code>./batect --permanently-disable-telemetry</code></a> once, which disables telemetry
+  and deletes any data that has been collected but not yet uploaded</p>
+</li>
+<li>
+<p>Run each task with <a href="CLIReference.html#disable-telemetry-for-this-invocation-no-telemetry"><code>./batect --no-telemetry &lt;task&gt;</code></a> (eg. <code>./batect --no-telemetry build</code>),
+  which disables telemetry for that invocation of batect</p>
+</li>
+<li>
+<p>Set the <code>BATECT_ENABLE_TELEMETRY</code> environment variable to <code>false</code></p>
+</li>
+</ul>
+<p>If you wish to block telemetry data uploads at the network level, block access to <code>api.abacus.batect.dev</code>. Note that the IP address of this host name
+can change at any time, so it is best to block the host name, not the IP address. (Do not block access to <code>batect.dev</code>, as that will block access to this site.)</p>
+<h3 id="how-to-request-for-your-data-to-be-deleted_1">How to request for your data to be deleted<a class="headerlink" href="#how-to-request-for-your-data-to-be-deleted_1" title="Permanent link">&para;</a></h3>
+<p>Send a request to <a href="mailto:privacy@batect.dev">privacy@batect.dev</a>, and include your user ID from <code>~/.batect/telemetry/config.json</code>. Your data will be deleted
+within 14 days.</p>
+<h2 id="third-party-services">Third-party services<a class="headerlink" href="#third-party-services" title="Permanent link">&para;</a></h2>
+<p>The batect project uses a number of third-party services such as GitHub for code hosting, Spectrum for community chat and Bintray for artifact hosting.</p>
+<p>When you interact with these services, their respective privacy policy applies.</p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="SampleProjects.html" title="Sample projects" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Sample projects
+              </div>
+            </div>
+          </a>
+        
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2017-2020 Charles Korn. Documentation uses <a href="https://twemoji.twitter.com/">Twemoji</a>, licensed under the CC-BY 4.0 license.
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+  <div class="md-footer-social">
+    
+      
+      
+        
+        
+      
+      <a href="https://github.com/batect/batect" target="_blank" rel="noopener" title="github.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+      </a>
+    
+      
+      
+        
+        
+      
+      <a href="https://spectrum.chat/batect" target="_blank" rel="noopener" title="spectrum.chat" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M416 192c0-88.4-93.1-160-208-160S0 103.6 0 192c0 34.3 14.1 65.9 38 92-13.4 30.2-35.5 54.2-35.8 54.5-2.2 2.3-2.8 5.7-1.5 8.7S4.8 352 8 352c36.6 0 66.9-12.3 88.7-25 32.2 15.7 70.3 25 111.3 25 114.9 0 208-71.6 208-160zm122 220c23.9-26 38-57.7 38-92 0-66.9-53.5-124.2-129.3-148.1.9 6.6 1.3 13.3 1.3 20.1 0 105.9-107.7 192-240 192-10.8 0-21.3-.8-31.7-1.9C207.8 439.6 281.8 480 368 480c41 0 79.1-9.2 111.3-25 21.8 12.7 52.1 25 88.7 25 3.2 0 6.1-1.9 7.3-4.8 1.3-2.9.7-6.3-1.5-8.7-.3-.3-22.4-24.2-35.8-54.5z"/></svg>
+      </a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="assets/javascripts/vendor.592d4e23.min.js"></script>
+      <script src="assets/javascripts/bundle.073197b2.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      
+      <script>
+        app = initialize({
+          base: ".",
+          features: [],
+          search: Object.assign({
+            worker: "assets/javascripts/worker/search.01088dc6.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+        <script src="assets/3rdparty/asciinema-player.js"></script>
+      
+    
+  </body>
+</html>

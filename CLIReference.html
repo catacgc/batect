@@ -428,6 +428,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#skip-prerequisites-skip-prerequisites" class="md-nav__link">
+    Skip prerequisites (--skip-prerequisites)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#use-an-existing-network-for-tasks-use-network" class="md-nav__link">
     Use an existing network for tasks (--use-network)
   </a>
@@ -568,6 +575,40 @@
           <li class="md-nav__item">
   <a href="#force-a-particular-output-style-output-or-o" class="md-nav__link">
     Force a particular output style (--output or -o)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#telemetry-options" class="md-nav__link">
+    Telemetry options
+  </a>
+  
+    <nav class="md-nav" aria-label="Telemetry options">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#disable-telemetry-permanently-permanently-disable-telemetry" class="md-nav__link">
+    Disable telemetry permanently (--permanently-disable-telemetry)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enable-telemetry-permanently-permanently-enable-telemetry" class="md-nav__link">
+    Enable telemetry permanently (--permanently-enable-telemetry)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#disable-telemetry-for-this-invocation-no-telemetry" class="md-nav__link">
+    Disable telemetry for this invocation (--no-telemetry)
   </a>
   
 </li>
@@ -957,6 +998,18 @@
   </li>
 
     
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="Privacy.html" title="Privacy" class="md-nav__link">
+      Privacy
+    </a>
+  </li>
+
+    
   </ul>
 </nav>
                   </div>
@@ -1021,6 +1074,13 @@
           <li class="md-nav__item">
   <a href="#disable-propagation-of-proxy-related-environment-variables-no-proxy-vars" class="md-nav__link">
     Disable propagation of proxy-related environment variables (--no-proxy-vars)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#skip-prerequisites-skip-prerequisites" class="md-nav__link">
+    Skip prerequisites (--skip-prerequisites)
   </a>
   
 </li>
@@ -1176,6 +1236,40 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#telemetry-options" class="md-nav__link">
+    Telemetry options
+  </a>
+  
+    <nav class="md-nav" aria-label="Telemetry options">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#disable-telemetry-permanently-permanently-disable-telemetry" class="md-nav__link">
+    Disable telemetry permanently (--permanently-disable-telemetry)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enable-telemetry-permanently-permanently-enable-telemetry" class="md-nav__link">
+    Enable telemetry permanently (--permanently-enable-telemetry)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#disable-telemetry-for-this-invocation-no-telemetry" class="md-nav__link">
+    Disable telemetry for this invocation (--no-telemetry)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#general-notes" class="md-nav__link">
     General notes
   </a>
@@ -1262,6 +1356,14 @@ However, sometimes it can be useful to leave all the created containers running 
 Use this option to disable this behaviour.</p>
 <p>Example:</p>
 <div class="highlight"><pre><span></span><code>./batect --no-proxy-vars the-task
+</code></pre></div>
+
+<h3 id="skip-prerequisites-skip-prerequisites">Skip prerequisites <small>(<code>--skip-prerequisites</code>)</small><a class="headerlink" href="#skip-prerequisites-skip-prerequisites" title="Permanent link">&para;</a></h3>
+<p>Normally, batect will run all tasks defined as <a href="config/Tasks.html#prerequisites">prerequisites</a> for the task given on the command line, before then
+running the requested task.</p>
+<p>Use this option to run only the requested task.</p>
+<p>Example:</p>
+<div class="highlight"><pre><span></span><code>./batect --skip-prerequisites the-task
 </code></pre></div>
 
 <h3 id="use-an-existing-network-for-tasks-use-network">Use an existing network for tasks <small>(<code>--use-network</code>)</small><a class="headerlink" href="#use-an-existing-network-for-tasks-use-network" title="Permanent link">&para;</a></h3>
@@ -1462,6 +1564,26 @@ believe your console supports coloured output, or your console may incorrectly r
 </code></pre></div>
 
 <p>Passing <code>--output=quiet</code> implies <a href="#disable-update-notification-no-update-notification"><code>--no-update-notification</code></a>.</p>
+<h2 id="telemetry-options">Telemetry options<a class="headerlink" href="#telemetry-options" title="Permanent link">&para;</a></h2>
+<p>batect can collect <a href="Privacy.html#in-app-telemetry">telemetry information</a> to help inform the design and prioritisation of new features and bug fixes.</p>
+<p>When batect starts for the first time, it prompts for permission to collect this information and stores this permission.</p>
+<p>These options allow you to enable or disable telemetry permanently or for a single invocation:</p>
+<h3 id="disable-telemetry-permanently-permanently-disable-telemetry">Disable telemetry permanently <small>(<code>--permanently-disable-telemetry</code>)</small><a class="headerlink" href="#disable-telemetry-permanently-permanently-disable-telemetry" title="Permanent link">&para;</a></h3>
+<p>If you would like to opt-out of telemetry, run <code>./batect --permanently-disable-telemetry</code> to disable collecting telemetry data and
+remove any data that has been collected but not yet uploaded.</p>
+<p>This also resets your telemetry user ID, ensuring that if you do ever re-enable telemetry, any previous data uploaded is not associated with any
+new data.</p>
+<h3 id="enable-telemetry-permanently-permanently-enable-telemetry">Enable telemetry permanently <small>(<code>--permanently-enable-telemetry</code>)</small><a class="headerlink" href="#enable-telemetry-permanently-permanently-enable-telemetry" title="Permanent link">&para;</a></h3>
+<p>If you would like to opt-in to telemetry, run <code>./batect --permanently-enable-telemetry</code> to enable collecting telemetry data.</p>
+<h3 id="disable-telemetry-for-this-invocation-no-telemetry">Disable telemetry for this invocation <small>(<code>--no-telemetry</code>)</small><a class="headerlink" href="#disable-telemetry-for-this-invocation-no-telemetry" title="Permanent link">&para;</a></h3>
+<p>By default, batect uses the permission you granted it when it ran for the first time.</p>
+<p>If you would like to disable telemetry collection or uploading for a single invocation, pass the <code>--no-telemetry</code> flag, for example:</p>
+<div class="highlight"><pre><span></span><code>./batect --no-telemetry the-task
+</code></pre></div>
+
+<p>Note that this does not cause any data that has been collected from other invocations but not uploaded to be removed - it will be uploaded the next time
+batect runs without the <code>--no-telemetry</code> flag.</p>
+<p>You can also set the <code>BATECT_ENABLE_TELEMETRY</code> environment variable to <code>false</code> to disable telemetry collection and uploading.</p>
 <h2 id="general-notes">General notes<a class="headerlink" href="#general-notes" title="Permanent link">&para;</a></h2>
 <ul>
 <li>All command line options that take a value can be provided in <code>--option=value</code> or <code>--option value</code> format.</li>

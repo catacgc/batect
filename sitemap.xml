@@ -1,131 +1,135 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url>
      <loc>https://batect.dev/index.html</loc>
-     <lastmod>2020-08-04</lastmod>
+     <lastmod>2020-08-16</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://batect.dev/Setup.html</loc>
-     <lastmod>2020-08-04</lastmod>
+     <lastmod>2020-08-16</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://batect.dev/GettingStarted.html</loc>
-     <lastmod>2020-08-04</lastmod>
+     <lastmod>2020-08-16</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://batect.dev/Comparison.html</loc>
-     <lastmod>2020-08-04</lastmod>
+     <lastmod>2020-08-16</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://batect.dev/config/Overview.html</loc>
-     <lastmod>2020-08-04</lastmod>
+     <lastmod>2020-08-16</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://batect.dev/config/ConfigVariables.html</loc>
-     <lastmod>2020-08-04</lastmod>
+     <lastmod>2020-08-16</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://batect.dev/config/Containers.html</loc>
-     <lastmod>2020-08-04</lastmod>
+     <lastmod>2020-08-16</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://batect.dev/config/Includes.html</loc>
-     <lastmod>2020-08-04</lastmod>
+     <lastmod>2020-08-16</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://batect.dev/config/Tasks.html</loc>
-     <lastmod>2020-08-04</lastmod>
+     <lastmod>2020-08-16</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://batect.dev/config/Expressions.html</loc>
-     <lastmod>2020-08-04</lastmod>
+     <lastmod>2020-08-16</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://batect.dev/CLIReference.html</loc>
-     <lastmod>2020-08-04</lastmod>
+     <lastmod>2020-08-16</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://batect.dev/TaskLifecycle.html</loc>
-     <lastmod>2020-08-04</lastmod>
+     <lastmod>2020-08-16</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://batect.dev/tools/DotNetCore.html</loc>
-     <lastmod>2020-08-04</lastmod>
+     <lastmod>2020-08-16</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://batect.dev/tools/Docker.html</loc>
-     <lastmod>2020-08-04</lastmod>
+     <lastmod>2020-08-16</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://batect.dev/tools/Golang.html</loc>
-     <lastmod>2020-08-04</lastmod>
+     <lastmod>2020-08-16</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://batect.dev/tools/Gradle.html</loc>
-     <lastmod>2020-08-04</lastmod>
+     <lastmod>2020-08-16</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://batect.dev/tools/Node.html</loc>
-     <lastmod>2020-08-04</lastmod>
+     <lastmod>2020-08-16</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://batect.dev/tools/Ruby.html</loc>
-     <lastmod>2020-08-04</lastmod>
+     <lastmod>2020-08-16</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://batect.dev/tools/Seq.html</loc>
-     <lastmod>2020-08-04</lastmod>
+     <lastmod>2020-08-16</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://batect.dev/tools/CIGeneral.html</loc>
-     <lastmod>2020-08-04</lastmod>
+     <lastmod>2020-08-16</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://batect.dev/tools/Buildkite.html</loc>
-     <lastmod>2020-08-04</lastmod>
+     <lastmod>2020-08-16</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://batect.dev/tools/CircleCI.html</loc>
-     <lastmod>2020-08-04</lastmod>
+     <lastmod>2020-08-16</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://batect.dev/tools/GitHubActions.html</loc>
-     <lastmod>2020-08-04</lastmod>
+     <lastmod>2020-08-16</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://batect.dev/tools/TravisCI.html</loc>
-     <lastmod>2020-08-04</lastmod>
+     <lastmod>2020-08-16</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://batect.dev/tips/IDEIntegration.html</loc>
-     <lastmod>2020-08-04</lastmod>
+     <lastmod>2020-08-16</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://batect.dev/tips/Performance.html</loc>
-     <lastmod>2020-08-04</lastmod>
+     <lastmod>2020-08-16</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://batect.dev/tips/BuildArtifactsOwnedByRoot.html</loc>
-     <lastmod>2020-08-04</lastmod>
+     <lastmod>2020-08-16</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://batect.dev/tips/WaitingForDependenciesToBeReady.html</loc>
-     <lastmod>2020-08-04</lastmod>
+     <lastmod>2020-08-16</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://batect.dev/tips/Proxies.html</loc>
-     <lastmod>2020-08-04</lastmod>
+     <lastmod>2020-08-16</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://batect.dev/tips/Windows.html</loc>
-     <lastmod>2020-08-04</lastmod>
+     <lastmod>2020-08-16</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://batect.dev/Bundles.html</loc>
-     <lastmod>2020-08-04</lastmod>
+     <lastmod>2020-08-16</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://batect.dev/SampleProjects.html</loc>
-     <lastmod>2020-08-04</lastmod>
+     <lastmod>2020-08-16</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://batect.dev/Privacy.html</loc>
+     <lastmod>2020-08-16</lastmod>
      <changefreq>daily</changefreq>
     </url>
 </urlset>

@@ -890,6 +890,18 @@
   </li>
 
     
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../Privacy.html" title="Privacy" class="md-nav__link">
+      Privacy
+    </a>
+  </li>
+
+    
   </ul>
 </nav>
                   </div>
@@ -1080,7 +1092,7 @@ of batect.</p>
 <p>Group name used to group tasks when running <code>batect --list-tasks</code>.</p>
 <h2 id="run"><code>run</code><a class="headerlink" href="#run" title="Permanent link">&para;</a></h2>
 <p>Specifies what to do when this task starts.</p>
-<p>If <code>run</code> is not provided, then <code>prerequisites</code> is required and the tasks listed in <code>prerequisites</code> are run to completion before considering this task complete.</p>
+<p>If <code>run</code> is not provided, then <code>prerequisites</code> is required and the tasks listed in <a href="#prerequisites"><code>prerequisites</code></a> are run to completion before considering this task complete.</p>
 <p><code>run</code> is made up of the following fields:</p>
 <h3 id="container"><code>container</code><a class="headerlink" href="#container" title="Permanent link">&para;</a></h3>
 <p><a href="Containers.html">Container</a> to run for this task. <strong>Required.</strong></p>
@@ -1118,6 +1130,7 @@ container's definition.</p>
 <p>If a prerequisite task finishes with a non-zero exit code, then neither this task nor any other prerequisites will be run.</p>
 <p>The tasks are run in the same order that they are declared in, unless reordering is required to satisfy the prerequisites of
 this task's prerequisites.</p>
+<p>Passing the <a href="../CLIReference.html#skip-prerequisites-skip-prerequisites"><code>--skip-prerequisites</code></a> command line flag skips all defined prerequisites and runs only the task specified on the command line.</p>
 <h2 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h2>
 <p>For more examples and real-world scenarios, take a look at the <a href="../SampleProjects.html">sample projects</a>.</p>
 <h3 id="minimal-configuration">Minimal configuration<a class="headerlink" href="#minimal-configuration" title="Permanent link">&para;</a></h3>

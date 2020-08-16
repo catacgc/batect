@@ -500,6 +500,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#image_pull_policy" class="md-nav__link">
+    image_pull_policy
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#log_driver" class="md-nav__link">
     log_driver
   </a>
@@ -1055,6 +1062,18 @@
   </li>
 
     
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../Privacy.html" title="Privacy" class="md-nav__link">
+      Privacy
+    </a>
+  </li>
+
+    
   </ul>
 </nav>
                   </div>
@@ -1247,6 +1266,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#image_pull_policy" class="md-nav__link">
+    image_pull_policy
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#log_driver" class="md-nav__link">
     log_driver
   </a>
@@ -1427,6 +1453,7 @@ of batect.</p>
 <li><a href="#additional_hosts"><code>additional_hosts</code></a>: extra entries to add to <code>/etc/hosts</code> inside the container</li>
 <li><a href="#log_driver"><code>log_driver</code></a>: Docker log driver to use when running the container</li>
 <li><a href="#log_options"><code>log_options</code></a>: additional options for the log driver in use</li>
+<li><a href="#image_pull_policy"><code>image_pull_policy</code></a>: when to pull the image used by this container</li>
 </ul>
 <h2 id="additional_hostnames"><code>additional_hostnames</code><a class="headerlink" href="#additional_hostnames" title="Permanent link">&para;</a></h2>
 <p><small><strong>Equivalent Docker CLI option</strong>: <code>--network-alias</code> to <code>docker run</code>, <strong>equivalent Docker Compose option</strong>: <code>extra_hosts</code></small></p>
@@ -1698,6 +1725,26 @@ After an initial three second waiting period, the container will be declared unh
 <p class="admonition-title">Tip</p>
 <p>It is highly recommended that you specify a specific image version, and not use <code>latest</code>, to ensure that the same image is used
 everywhere. For example, use <code>alpine:3.7</code>, not <code>alpine</code> or <code>alpine:latest</code>.</p>
+</div>
+<h2 id="image_pull_policy"><code>image_pull_policy</code><a class="headerlink" href="#image_pull_policy" title="Permanent link">&para;</a></h2>
+<p><small><strong>Equivalent Docker CLI option</strong>: <code>--pull</code> to <code>docker build</code> or re-running <code>docker pull</code>, <strong>equivalent Docker Compose option</strong>: none</small></p>
+<p>Controls when to pull the image used by this container.</p>
+<p>Applies to all containers. If the image is specified as <a href="#image"><code>image</code></a>, this policy controls the behaviour for pulling <code>image</code>. If the image is built from
+a <a href="#build_directory"><code>build_directory</code></a>, this policy controls the behaviour for pulling any base images.</p>
+<p>Valid options are:</p>
+<ul>
+<li><code>IfNotPresent</code> (default): pull the image / base image(s) for the container only if an image with the same tag has not already been pulled</li>
+<li><code>Always</code>: always attempt to pull the image / base image(s) every time the container is started</li>
+</ul>
+<p>For example, the container <code>my-container</code> from the following configuration will use the <code>IfNotPresent</code> image pull policy:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">containers</span><span class="p">:</span>
+  <span class="nt">my-container</span><span class="p">:</span>
+    <span class="nt">image_pull_policy</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">IfNotPresent</span>
+</code></pre></div>
+
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>It is highly recommended that you use <code>IfNotPresent</code>. Using <code>Always</code> can incur a significant performance penalty.</p>
 </div>
 <h2 id="log_driver"><code>log_driver</code><a class="headerlink" href="#log_driver" title="Permanent link">&para;</a></h2>
 <p><small><strong>Equivalent Docker CLI option</strong>: <code>--log-driver</code> to <code>docker run</code>, <strong>equivalent Docker Compose option</strong>: <code>logging.driver</code></small></p>
